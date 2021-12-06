@@ -1,7 +1,7 @@
 # Projeto Integrador – Rede Social
 
  
- <img src = "https://github.com/JhonMeddev/DearNews-Social-Project/blob/main/images/logo.png?raw=true"> </img>
+ <img align="center" src = "https://github.com/JhonMeddev/DearNews-Social-Project/blob/main/images/logo.png?raw=true"> </img>
  
  # 💡 Sobre
  

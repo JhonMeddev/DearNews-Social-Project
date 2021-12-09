@@ -50,7 +50,7 @@ public class TopicController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Topic> postTopic (@Valid @RequestBody Topic topic){
+	public ResponseEntity<Topic> post (@Valid @RequestBody Topic topic){
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(repository.save(topic));
 	}

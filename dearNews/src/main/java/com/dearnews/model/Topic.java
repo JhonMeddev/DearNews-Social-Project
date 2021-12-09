@@ -17,11 +17,11 @@ public class Topic {
 	private long id;
 	
 	@NotBlank
-	@Size(min = 5, max = 20, message = "O nome precisa ter entre 5 e 20 carácteres.")
+	@Size(min = 2, max = 20, message = "O nome precisa ter entre 2 e 20 carácteres.")
 	private String name;
 	
 	@NotBlank
-	@Size(min = 5, max = 50, message = "A descrição precisa ter entre 5 e 25 carácteres.")
+	@Size(min = 5, max = 50, message = "A descrição precisa ter entre 5 e 50 carácteres.")
 	private String description;
 	
 	private boolean savePost;

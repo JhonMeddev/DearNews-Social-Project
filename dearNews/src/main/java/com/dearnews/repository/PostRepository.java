@@ -1,5 +1,5 @@
 package com.dearnews.repository;
-
+//Rubem
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;

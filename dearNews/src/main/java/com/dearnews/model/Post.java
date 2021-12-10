@@ -1,7 +1,7 @@
 package com.dearnews.model;
 
 import java.util.Date;
-
+//Rubem
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

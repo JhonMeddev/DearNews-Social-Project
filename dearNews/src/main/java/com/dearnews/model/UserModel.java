@@ -1,32 +1,42 @@
 package com.dearnews.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "tb_user")
-public class User {
+public class UserModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotBlank
+	@NotBlank(message = "O campo nome não pode estar vazio e nem pode ser preenchido com espaços.")
 	@Size(min = 5, max = 100)
 	private String name;
 	
-	@NotBlank
-	@Size(min = 5, max = 100)
+	@NotBlank(message = "O campo e-mail não pode estar vazio e nem pode ser preenchido com espaços.")
+	@Size(min = 5, max = 100, message = "O nome precisa ter entre 5 e 100 carácteres.")
 	private String email;
 	
-	@NotBlank
-	@Size(min = 5, max = 100)
+	@NotBlank(message = "O campo senha não pode estar vazio e nem pode ser preenchido com espaços.")
+	@Size(min = 5, max = 100, message = "O nome precisa ter entre 5 e 100 carácteres.")
 	private String password;
+	
+	@OneToMany(mappedBy = "userModel", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("userModel") // evita o loop-infinito de post procurar userModel e userModel procurar post. garantindo apenas 1 retorno
+	private List<Post> post;
 
 	public long getId() {
 		return id;

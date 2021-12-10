@@ -56,9 +56,13 @@ public class TopicController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Topic> put (@Valid @RequestBody Topic topic){
-		return ResponseEntity.ok(repository.save(topic));
-				
+	public ResponseEntity<Topic> putTopic(@Valid @RequestBody Topic topic) {
+					
+		return repository.findById(topic.getId())
+				.map(resposta -> {
+					return ResponseEntity.ok().body(repository.save(topic));
+				})
+				.orElse(ResponseEntity.notFound().build());
 	}
 	
 	@DeleteMapping("/{id}")

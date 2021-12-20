@@ -13,6 +13,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 @Entity
 @Table(name = "tb_user")
 public class UserModel {
@@ -22,11 +24,12 @@ public class UserModel {
 	private long id;
 	
 	@NotBlank(message = "O campo nome não pode estar vazio e nem pode ser preenchido com espaços.")
-	@Size(min = 5, max = 100)
+	@Size(min = 5, max = 100, message = "O nome precisa ter entre 5 e 100 carácteres.")
 	private String name;
 	
+	@Schema(example = "email@email.com.br")
 	@NotBlank(message = "O campo e-mail não pode estar vazio e nem pode ser preenchido com espaços.")
-	@Size(min = 5, max = 100, message = "O nome precisa ter entre 5 e 100 carácteres.")
+	@Size(min = 5, max = 150, message = "O email precisa ter entre 5 e 150 carácteres.")
 	@Email(message = "O campo deve conter um email válido")
 	private String email;
 	

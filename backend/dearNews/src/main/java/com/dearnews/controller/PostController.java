@@ -39,14 +39,14 @@ public class PostController {
 			.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<List<Post>> getByTitle(@PathVariable String title){
+	@GetMapping("/title/{title}")
+	public ResponseEntity<List<Post>> getByTitle(@Valid @PathVariable String title){
 		return ResponseEntity.ok(postRepository.findAllByTitleContainingIgnoreCase(title));
 	}	
 	
-	@GetMapping("/texto/{texto}")
-	public ResponseEntity<List<Post>> getByText(@PathVariable String text){
-		return ResponseEntity.ok(postRepository.findAllByTitleContainingIgnoreCase(text));
+	@GetMapping("/text/{text}")
+	public ResponseEntity<List<Post>> getByText(@Valid @PathVariable String text){
+		return ResponseEntity.ok(postRepository.findAllByTextContainingIgnoreCase(text));
 	}	
 	
 	

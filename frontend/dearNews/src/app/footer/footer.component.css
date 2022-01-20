@@ -1,0 +1,30 @@
+.corTitulo{
+    color: rgb(200, 221, 217);
+}
+
+.fab{
+   font-size: 3rem; 
+   padding-left: 1.6rem;
+   padding-right: 1.6rem;
+}
+
+.fas{
+    font-size: 3rem; 
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+ }
+
+.fa-github:hover{
+    color: rgb(255, 255, 255);
+    font-size: 3.1rem;
+}
+
+.fa-envelope:hover{
+    color: rgb(255, 255, 255);
+    font-size: 3.1rem;
+}
+
+.fa-address-card:hover{
+    color: rgb(255, 255, 255);
+    font-size: 3.1rem;
+}

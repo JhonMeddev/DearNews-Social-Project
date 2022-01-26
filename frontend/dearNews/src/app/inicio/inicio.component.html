@@ -1,0 +1,102 @@
+<div class="container-fluid">
+
+  <div class="row corFundo d-flex align-items-center">
+
+      <div class="col-md-6">
+
+          <div class="row d-flex justify-content-center">
+              <div class="col-md-6">
+                  <h1>Compartilhe Boas Noticias..</h1>
+                  <h4>Qual foi a melhor noticia que você viu hoje ?</h4>
+              </div>
+          </div>
+
+          <div class="row d-flex justify-content-center mt-2 mb-4">
+              <div class="col-md-6">
+                  <button class="btn btn-outline-dark mr-2" data-toggle="modal" data-target="#staticBackdrop">Nova Postagem</button>
+                  <a class="btn btn-outline-dark" href="#postagens">Ver Postagens</a>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="col-md-6 d-flex justify-content-center">
+          <img src="" alt="" width="400px" height="400px">
+      </div>
+
+  </div>
+</div>
+
+<div class="container mb-4 mt-4" id="postagens">
+  <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+
+      <li class="nav-item" role="presentation">
+          <a class="nav-link active text-dark font-weight-bold" id="minhaPostagens-tab" data-toggle="tab"
+              href="#minhaPostagens" role="tab" aria-controls="minhaPostagens" aria-selected="true">Minhas
+              postagens</a>
+      </li>
+
+      <li class="nav-item" role="presentation">
+          <a class="nav-link text-dark font-weight-bold" id="todasPostagens-tab" data-toggle="tab"
+              href="#todasPostagens" role="tab" aria-controls="todasPostagens" aria-selected="false">Todas as
+              postagens</a>
+      </li>
+
+      <li class="nav-item" role="presentation">
+          <a class="nav-link text-dark font-weight-bold" id="postagensCategoria-tab" data-toggle="tab"
+              href="#postagensCategoria" role="tab" aria-controls="postagensCategoria" aria-selected="false">Postagens
+              por categoria</a>
+      </li>
+
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="minhaPostagens" role="tabpanel" aria-labelledby="minhaPostagens-tab">
+          minhaPostagens</div>
+      <div class="tab-pane fade" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+          todasPostagens
+          todasPostagens
+          todasPostagens
+          todasPostagens
+          todasPostagens
+      </div>
+      <div class="tab-pane fade" id="postagensCategoria" role="tabpanel" aria-labelledby="postagensCategoria-tab">
+          postagensCategoria</div>
+  </div>
+
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title" id="staticBackdropLabel">Faça sua postagem...</h4>
+          </div>
+          <div class="modal-body">
+
+              <div class="form-group">
+                  <label for="titulo">Título</label>
+                  <input type="text" class="form-control" id="titulo" placeholder="Digite o título da postagem...">
+              </div>
+
+              <div class="form-group">
+                  <label for="tema">Selecione a categoria <a data-dismiss="modal" routerLink="/tema">(cadastrar categoria...)</a></label>
+                  <select class="form-control" name="tema" id="tema">
+                      <option value="">Categoria</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="titulo">Texto</label>
+                  <textarea class="form-control" name="texto" id="texto" rows="8"></textarea>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn1" data-dismiss="modal">Voltar</button>
+              <button type="button" class="btn btn2">Postar</button>
+          </div>
+      </div>
+  </div>
+</div>

@@ -10,7 +10,11 @@
 
                     <!--Form with header-->
 
-                    <form action="mail.php" method="post">
+                    <form action="https://api.staticforms.xyz/submit" method="post">
+
+                      <input type="hidden" name="accessKey" value="36b881c3-6860-4f84-b44c-936bfe357eb4">
+                      <input type="hidden" name="redirectTo" value="http://localhost:4200">
+
                         <div class="card border-primary rounded-0">
                             <div class="card-header p-0">
                                 <div class="bg-primary text-white text-center py-2">
@@ -48,7 +52,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <input type="submit" value="Enviar" class="btn btn-primary btn-block rounded-0 py-2">
+                                    <input type="submit" value="Enviar" class="btn btn-submit btn-primary rounded-0 py-2">
                                 </div>
                             </div>
 

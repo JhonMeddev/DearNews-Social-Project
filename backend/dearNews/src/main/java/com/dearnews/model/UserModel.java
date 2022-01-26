@@ -34,10 +34,12 @@ public class UserModel {
 	private String email;
 	
 	@NotBlank(message = "O campo senha não pode estar vazio e nem pode ser preenchido com espaços.")
-	@Size(min = 5, max = 100, message = "O nome precisa ter entre 5 e 100 carácteres.")
+	@Size(min = 5, max = 100, message = "A senha precisa ter entre 5 e 100 carácteres.")
 	private String password;
 	
 	private String photo;
+
+	private String tipo;
 	
 	@OneToMany(mappedBy = "userModel", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("userModel")
@@ -83,6 +85,12 @@ public class UserModel {
 	}
 	public void setPost(List<Post> post) {
 		this.post = post;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
 }

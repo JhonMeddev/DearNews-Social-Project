@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid tamanho">
 
   <div class="row corFundo d-flex align-items-center">
 
@@ -30,7 +30,7 @@
 <div class="container mb-4 mt-4" id="postagens">
   <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
 
-      <li class="nav-item" role="presentation">
+      <li class="nav-item" *ngIf="auth.logado()" role="presentation">
           <a class="nav-link active text-dark font-weight-bold" id="minhaPostagens-tab" data-toggle="tab"
               href="#minhaPostagens" role="tab" aria-controls="minhaPostagens" aria-selected="true">Minhas
               postagens</a>
@@ -42,7 +42,7 @@
               postagens</a>
       </li>
 
-      <li class="nav-item" role="presentation">
+      <li class="nav-item" *ngIf="auth.logado()" role="presentation">
           <a class="nav-link text-dark font-weight-bold" id="postagensCategoria-tab" data-toggle="tab"
               href="#postagensCategoria" role="tab" aria-controls="postagensCategoria" aria-selected="false">Postagens
               por categoria</a>

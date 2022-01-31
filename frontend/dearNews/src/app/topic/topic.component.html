@@ -1,26 +1,52 @@
+<div class="container-fluid">
 
+  <div class="row" style="background-color: #0026ffc0;">
+    <div class="col-md-12 text-white">
 
+      <a routerLink='/inicio' class="text-white text-left">
+        <i class="fa fa-angle-double-left" aria-hidden="true"></i> início
+      </a>
 
-<div class="container-fluid text-center">
+      <h1 class="fs-54 text-center">Tópicos</h1>
+      <h5 class="fs-18 text-center">Veja aqui todos os tópicos cadastrados ou cadastre um novo:</h5>
 
-  <div class="row">
-    <h1>Escolha um Tópico</h1>
-  </div>
+      <div class="row d-flex justify-content-center mt-4 mb-5">
+        <div class="col-md-3">
+          <div class="form-group">
+            <input [(ngModel)]='topic.name' type="text" class="form-control" id="name" placeholder="Digite o nome do tópico">
+          </div>
+          
+          <div class="form-group">
+            <input [(ngModel)]='topic.description' type="text" class="form-control" id="description" placeholder="Digite a descrição do tópico">
+          </div>
 
-  <div class="row">
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-light" (click)='register()'>Cadastrar</button>
+          </div>
 
-    <div class="form-group">
-
-      <label for="">Tema:</label>
-
-      <select class="form-control"name="Topic" id="">
-
-        <option value=""></option>
-
-      </select>
+        </div>
+      </div>
 
     </div>
-
   </div>
-
 </div>
+
+<div class="container">
+
+  <div class="row mt-5 mb-5">
+    <div class="col-md-12">
+      <h2 class="text-center">Todos os Tópicos</h2>
+    
+          <label for="">Categorias:</label>
+    
+          <select name="topic" id="topic" class="form-control" [(ngModel)]='idTopic' (change)='findByIdTopic()'>
+    
+            <option *ngFor='let item of listaTopic' value="{{item.id}}">{{item.description}}</option>
+    
+          </select>
+    
+        </div>
+    
+      </div>
+
+    </div>

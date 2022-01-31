@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { TopicComponent } from './topic/topic.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { InicioComponent } from './inicio/inicio.component';
     AboutUsComponent,
     FooterComponent,
     InicioComponent,
+    TopicComponent,
   ],
   imports: [
     BrowserModule,

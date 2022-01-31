@@ -7,7 +7,7 @@ import { Topic } from '../model/Topic';
 @Injectable({
   providedIn: 'root'
 })
-export class TemaService {
+export class TopicService {
 
   constructor(private http: HttpClient) { }
 
@@ -31,12 +31,12 @@ export class TemaService {
     return this.http.get<Topic>(`https://dearnews.herokuapp.com/topic/name/${name}`, this.token)
   }
 
-  postTopic(Topic : Topic): Observable<Topic>{
-    return this.http.post<Topic>('https://dearnews.herokuapp.com/topic', Topic,this.token)
+  postTopic(topic : Topic): Observable<Topic>{
+    return this.http.post<Topic>('https://dearnews.herokuapp.com/topic', topic,this.token)
   }
 
-  putTopic(Topic: Topic): Observable<Topic>{
-    return this.http.put<Topic>('https://dearnews.herokuapp.com/topic', Topic,this.token)
+  putTopic(topic: Topic): Observable<Topic>{
+    return this.http.put<Topic>('https://dearnews.herokuapp.com/topic', topic,this.token)
   }
 
   deleteTopic(id : number) {

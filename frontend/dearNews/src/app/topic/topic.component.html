@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-  <div class="row" style="background-color: #0026ffc0;">
+  <div class="row bg-secondary">
     <div class="col-md-12 text-white">
 
       <a routerLink='/inicio' class="text-white text-left">
@@ -20,8 +20,19 @@
             <input [(ngModel)]='topic.description' type="text" class="form-control" id="description" placeholder="Digite a descrição do tópico">
           </div>
 
+          <div class="form-check d-flex justify-content-start mb-4">
+            <input
+            [(ngModel)]='topic.savePost'
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="savePost"
+            />
+            <label class="form-check-label" for="savePost"> Salvar Tópico </label>
+          </div>
+
           <div class="d-flex justify-content-center">
-            <button class="btn btn-light" (click)='register()'>Cadastrar</button>
+            <button class="btn btn-outline-light" (click)='register()'>Cadastrar</button>
           </div>
 
         </div>
@@ -31,17 +42,15 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
 
-  <div class="row mt-5 mb-5">
-    <div class="col-md-12">
-      <h2 class="text-center">Todos os Tópicos</h2>
-    
-          <label for="">Categorias:</label>
+  <div class="row mt-0 mb-0">
+    <div class="col-md-12 px-2 py-5">
+      <h2 class="text-center text-secondary mb-5">Todos os Tópicos</h2>
     
           <select name="topic" id="topic" class="form-control" [(ngModel)]='idTopic' (change)='findByIdTopic()'>
     
-            <option *ngFor='let item of listaTopic' value="{{item.id}}">{{item.description}}</option>
+            <option *ngFor='let item of listaTopic' value="{{item.id}}">{{item.name}}</option>
     
           </select>
     

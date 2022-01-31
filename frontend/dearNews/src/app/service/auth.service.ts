@@ -30,4 +30,24 @@ export class AuthService {
 
     return ok
   }
+
+  nome(){
+    let nome: string = ''
+    let nomeOk : any = environment.name
+
+    if (nomeOk != '' ) {
+      nome = nomeOk
+    }
+    return nome
+  }
+
+  foto(){
+    let foto: string = ''
+    let fotoOk : any = environment.photo
+
+    if (fotoOk != '' ) {
+      foto = fotoOk
+    }
+    return foto
+  }
 }

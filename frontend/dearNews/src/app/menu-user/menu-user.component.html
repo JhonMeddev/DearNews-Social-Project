@@ -1,0 +1,20 @@
+<div class="col-1 d-flex flex-column justify-content-between text-center mt-4 ml-2 bg-primary menu-user" >
+
+  <ul class="nav flex-sm-column ">
+    <li class="nav-item mt-5">
+      <img src="{{this.authService.foto()}}" alt="" width="100" height="100" class="img-fluid">
+    </li>
+    <li class="nav-item mt-5">
+      <p class="m-0 font-weight-bold text-light fs-16">Olá, {{this.authService.nome()}}</p>
+    </li>
+    <li class="nav-item mt-5">
+      <a [routerLink]="['/user-edit', id]"><p class="text-light fs-16 m-0">Editar Perfil <i class="far fa-edit"></i></p></a>
+    </li>
+
+  </ul>
+
+
+    <a class="mb-2 font-weight-bold text-light fs-16 " (click)='sair()' >SAIR <i class="fas fa-sign-out-alt"></i></a>
+
+</div>
+

@@ -1,0 +1,14 @@
+.menu-user{
+  margin: 5;
+  height: 60vh;
+  position: absolute;
+  border-radius: 1rem;
+}
+
+a{
+  cursor: pointer;
+}
+
+.fs-16{
+  float: bottom !important;
+}

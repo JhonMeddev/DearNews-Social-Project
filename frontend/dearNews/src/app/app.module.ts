@@ -9,10 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
+import { MenuUserComponent } from './menu-user/menu-user.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
-import { InicioComponent } from './inicio/inicio.component';
 import { TopicComponent } from './topic/topic.component';
 
 
@@ -27,6 +28,7 @@ import { TopicComponent } from './topic/topic.component';
     FooterComponent,
     InicioComponent,
     TopicComponent,
+    MenuUserComponent,
   ],
   imports: [
     BrowserModule,

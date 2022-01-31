@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Topic } from '../model/Topic';
+import { TopicService } from '../service/topic.service'
 
 @Component({
   selector: 'app-topic',
@@ -7,9 +11,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopicComponent implements OnInit {
 
-  constructor() { }
+  topic: Topic = new Topic()
+  listaTopic: Topic[]
+  idTopic: number
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    private topicService : TopicService
+  ) { }
+
+  ngOnInit() {
+    window.scroll (0,0)
+
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+    }
+
+    this.findAllTopic()
+  }
+
+  findByIdTopic(){
+    this.topicService.getByIdTopic(this.idTopic).subscribe((resp: Topic) =>{
+      this.topic = resp
+    })
+  }
+
+  findAllTopic(){
+    this.topicService.getAllTema().subscribe((resp: Topic[]) => {
+      this.listaTopic = resp
+    })
+  }
+  
+  register(){
+    this.topicService.postTopic(this.topic).subscribe((resp: Topic)=>{
+      this.topic = resp
+      alert('Tema cadastrado com sucesso!')
+      this.findAllTopic()
+      this.topic = new Topic()
+    })
+  }
+
+  savePost(){
+    
   }
 
 }

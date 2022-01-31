@@ -7,7 +7,7 @@ import { Topic } from '../model/Topic';
 @Injectable({
   providedIn: 'root'
 })
-export class TemaService {
+export class TopicService {
 
   constructor(private http: HttpClient) { }
 

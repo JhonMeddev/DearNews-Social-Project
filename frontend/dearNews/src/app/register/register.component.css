@@ -1,0 +1,7 @@
+#img-bg{
+    background-image: url('../../assets/images/register.png');
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80vh;
+}

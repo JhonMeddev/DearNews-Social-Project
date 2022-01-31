@@ -1,7 +1,10 @@
 #img-bg{
-    background-image: url('../../assets/images/register.png');
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 80vh;
+}
+
+.bg{
+  background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
 }

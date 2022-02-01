@@ -39,4 +39,12 @@ export class PostService {
     return this.http.post<Post>('https://dearnews.herokuapp.com/post', post, this.token)
   }
 
+  putPost(post: Post): Observable<Post>{
+    return this.http.put<Post>('https://dearnews.herokuapp.com/post', post, this.token)
+  }
+
+  deletePost(id: number) {
+    return this.http.delete(`https://dearnews.herokuapp.com/post/${id}`, this.token)
+  }
+
 }

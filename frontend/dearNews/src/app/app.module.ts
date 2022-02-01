@@ -15,6 +15,10 @@ import { MenuUserComponent } from './menu-user/menu-user.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './register/register.component';
 import { TopicComponent } from './topic/topic.component';
+import { EditPostComponent } from './edit/edit-post/edit-post.component';
+import { EditTopicComponent } from './edit/edit-topic/edit-topic.component';
+import { DeletePostComponent } from './delete/delete-post/delete-post.component';
+import { DeleteTopicComponent } from './delete/delete-topic/delete-topic.component';
 
 
 @NgModule({
@@ -29,6 +33,10 @@ import { TopicComponent } from './topic/topic.component';
     InicioComponent,
     TopicComponent,
     MenuUserComponent,
+    EditPostComponent,
+    EditTopicComponent,
+    DeletePostComponent,
+    DeleteTopicComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@ export class TopicService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-  getAllTema(): Observable<Topic[]>{
+  getAllTopic(): Observable<Topic[]>{
     return this.http.get<Topic[]>('https://dearnews.herokuapp.com/topic', this.token)
   }
 
@@ -32,11 +32,11 @@ export class TopicService {
   }
 
   postTopic(topic : Topic): Observable<Topic>{
-    return this.http.post<Topic>('https://dearnews.herokuapp.com/topic', topic,this.token)
+    return this.http.post<Topic>('https://dearnews.herokuapp.com/topic', topic, this.token)
   }
 
   putTopic(topic: Topic): Observable<Topic>{
-    return this.http.put<Topic>('https://dearnews.herokuapp.com/topic', topic,this.token)
+    return this.http.put<Topic>('https://dearnews.herokuapp.com/topic', topic, this.token)
   }
 
   deleteTopic(id : number) {

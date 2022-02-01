@@ -12,8 +12,7 @@ import { TopicService } from '../service/topic.service'
 export class TopicComponent implements OnInit {
 
   topic: Topic = new Topic()
-  listaTopic: Topic[]
-  idTopic: number
+  listTopic: Topic[]
 
   constructor(
     private router: Router,
@@ -30,18 +29,13 @@ export class TopicComponent implements OnInit {
     this.findAllTopic()
   }
 
-  findByIdTopic(){
-    this.topicService.getByIdTopic(this.idTopic).subscribe((resp: Topic) =>{
-      this.topic = resp
+
+  findAllTopic(){
+    this.topicService.getAllTopic().subscribe((resp: Topic[]) => {
+      this.listTopic = resp
     })
   }
 
-  findAllTopic(){
-    this.topicService.getAllTema().subscribe((resp: Topic[]) => {
-      this.listaTopic = resp
-    })
-  }
-  
   register(){
     this.topicService.postTopic(this.topic).subscribe((resp: Topic)=>{
       this.topic = resp
@@ -51,8 +45,6 @@ export class TopicComponent implements OnInit {
     })
   }
 
-  savePost(){
-    
-  }
+
 
 }

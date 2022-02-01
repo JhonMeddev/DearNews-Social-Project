@@ -16,20 +16,6 @@
             <input [(ngModel)]='topic.name' type="text" class="form-control" id="name" placeholder="Digite o nome do tópico">
           </div>
 
-          <div class="form-group">
-            <input [(ngModel)]='topic.description' type="text" class="form-control" id="description" placeholder="Digite a descrição do tópico">
-          </div>
-
-          <div class="form-check d-flex justify-content-start mb-4">
-            <input
-            [(ngModel)]='topic.savePost'
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="savePost"
-            />
-            <label class="form-check-label" for="savePost"> Salvar Tópico </label>
-          </div>
 
           <div class="d-flex justify-content-center">
             <button class="btn btn-outline-light" (click)='register()'>Cadastrar</button>
@@ -44,18 +30,36 @@
 
 <div class="container">
 
-  <div class="row d-flex justify-content-center mt-4 mb-5">
-    <div class="col-md-8 px-2 py-5">
-      <h2 class="text-center text-secondary mb-5">Todos os Tópicos</h2>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2 class="text-center">Todos os temas</h2>
+    </div>
+  </div>
 
-          <select name="topic" id="topic" class="form-control" [(ngModel)]='idTopic' (change)='findByIdTopic()'>
+  <div class="row mt-3 mb-5 d-flex justify-content-center">
+    <div class="col-md-6">
 
-            <option *ngFor='let item of listaTopic' value="{{item.id}}">{{item.name}}</option>
-
-          </select>
-
-        </div>
-
-      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Descrição</th>
+            <th scope="col" class="text-right">Modificações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let tema of listTopic'>
+            <th>{{tema.id}}</th>
+            <td>{{tema.description}}</td>
+            <td class="d-flex justify-content-end">
+              <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', tema.id]" >Editar</button>
+              <button class="btn btn-danger " [routerLink]="['/tema-delete', tema.id]">Apagar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
     </div>
+  </div>
+
+</div>

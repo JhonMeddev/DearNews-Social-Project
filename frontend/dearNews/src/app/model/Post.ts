@@ -9,6 +9,6 @@ export class Post{
   public text : string
   public data : Date
   public image : string
-  public usermodel : UserModel
+  public userModel : UserModel
   public topic : Topic
 }

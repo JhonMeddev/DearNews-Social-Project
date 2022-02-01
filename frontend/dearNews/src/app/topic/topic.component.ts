@@ -30,6 +30,7 @@ export class TopicComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
+    this.topicService.refreshToken()
     this.findAllTopic()
   }
 

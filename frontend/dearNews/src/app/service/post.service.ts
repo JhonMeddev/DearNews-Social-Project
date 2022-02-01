@@ -17,18 +17,24 @@ export class PostService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  refreshToken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
+  }
+
   getAllPosts(): Observable<Post[]> {
 
     return this.http.get<Post[]>('https://dearnews.herokuapp.com/post')
   }
 
   getByIdPosts(id: number): Observable<Post> {
-    return this.http.get<Post>(`https://dearnews.herokuapp.com/post/${id}`,)
+    return this.http.get<Post>(`https://dearnews.herokuapp.com/post/${id}`)
 
   }
 
   getByTitlePosts(title: string): Observable<Post>{
-    return this.http.get<Post>(`https://dearnews.herokuapp.com/post/title/${title}`,)
+    return this.http.get<Post>(`https://dearnews.herokuapp.com/post/title/${title}`)
   }
 
   getByText(text: string): Observable<Post>{

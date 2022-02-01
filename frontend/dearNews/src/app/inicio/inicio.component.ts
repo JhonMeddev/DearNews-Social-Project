@@ -39,9 +39,11 @@ export class InicioComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
 
+    this.postService.refreshToken()
     this.authService.refreshToken()
     this.getAllPosts()
     this.getAllTopic()
+
 
   }
 

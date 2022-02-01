@@ -22,19 +22,19 @@ export class TopicService {
   }
 
   getAllTopic(): Observable<Topic[]>{
-    return this.http.get<Topic[]>('https://dearnews.herokuapp.com/topic', this.token)
+    return this.http.get<Topic[]>('https://dearnews.herokuapp.com/topic')
   }
 
   getByIdTopic(id: number): Observable<Topic>{
-    return this.http.get<Topic>(`https://dearnews.herokuapp.com/topic/${id}`, this.token)
+    return this.http.get<Topic>(`https://dearnews.herokuapp.com/topic/${id}`)
   }
 
   getByDescription(description: string): Observable<Topic>{
-    return this.http.get<Topic>(`https://dearnews.herokuapp.com/topic/description/${description}`, this.token)
+    return this.http.get<Topic>(`https://dearnews.herokuapp.com/topic/description/${description}`)
   }
 
   getByName(name: string): Observable<Topic>{
-    return this.http.get<Topic>(`https://dearnews.herokuapp.com/topic/name/${name}`, this.token)
+    return this.http.get<Topic>(`https://dearnews.herokuapp.com/topic/name/${name}`)
   }
 
   postTopic(topic : Topic): Observable<Topic>{

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container mt-5">
 
   <div class="row bg-secondary">
     <div class="col-md-12 text-white">
@@ -15,7 +15,7 @@
           <div class="form-group">
             <input [(ngModel)]='topic.name' type="text" class="form-control" id="name" placeholder="Digite o nome do tópico">
           </div>
-          
+
           <div class="form-group">
             <input [(ngModel)]='topic.description' type="text" class="form-control" id="description" placeholder="Digite a descrição do tópico">
           </div>
@@ -42,20 +42,20 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container">
 
-  <div class="row mt-0 mb-0">
-    <div class="col-md-12 px-2 py-5">
+  <div class="row d-flex justify-content-center mt-4 mb-5">
+    <div class="col-md-8 px-2 py-5">
       <h2 class="text-center text-secondary mb-5">Todos os Tópicos</h2>
-    
+
           <select name="topic" id="topic" class="form-control" [(ngModel)]='idTopic' (change)='findByIdTopic()'>
-    
+
             <option *ngFor='let item of listaTopic' value="{{item.id}}">{{item.name}}</option>
-    
+
           </select>
-    
+
         </div>
-    
+
       </div>
 
     </div>

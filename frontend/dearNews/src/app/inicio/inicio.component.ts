@@ -40,6 +40,7 @@ export class InicioComponent implements OnInit {
     window.scroll(0,0)
 
     this.postService.refreshToken()
+    this.topicService.refreshToken()
     this.authService.refreshToken()
     this.getAllPosts()
     this.getAllTopic()
@@ -63,6 +64,14 @@ export class InicioComponent implements OnInit {
   findByIdTopic(){
     this.topicService.getByIdTopic(this.idTopic).subscribe((resp: Topic) => {
       this.topic = resp
+    })
+  }
+
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: UserModel) => {
+      this.user = resp
+
     })
   }
 

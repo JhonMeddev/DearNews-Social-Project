@@ -36,9 +36,8 @@
 
       <a class="nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Todas Postagens</a>
 
-      <a class="nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" *ngIf="authService.logado()">Minhas Postagens</a>
+      <a (click)='findByIdUser()' class="nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" *ngIf="authService.logado()">Minhas Postagens</a>
 
-      <a class="nav-link text-secondary font-weight-bold" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false" *ngIf="authService.logado()">Postagens Por Tema</a>
     </div>
 
   </nav>
@@ -50,8 +49,11 @@
         <div class="card text-center" *ngFor='let item of listPost'>
           <div class="card-body">
             <h5 class="card-title m-0">{{item.title}}</h5>
-            <small class="text-muted">Tema: {{item.topic.description}}</small>
-            <p class="card-text mt-3">{{item.title}}</p>
+            <div class="col-md-3">
+              <img src="{{item.image}}" alt="Imagem da publicação" width="300" height="300">
+            </div>
+            <small class="text-muted">Tema: {{item.topic.name}}</small>
+            <p class="card-text mt-3">{{item.text}}</p>
             <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
             <p class="card-text"><small class="text-muted">by: {{item.userModel.name}}</small></p>
           </div>
@@ -63,33 +65,16 @@
     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
       <div class="card-columns">
-        <div class="card text-center" >
+        <div class="card text-center" *ngFor='let item of user.post' >
           <div class="card-body">
-            <h5 class="card-title m-0">titulo</h5>
-            <small class="text-muted">Tema: </small>
-            <p class="card-text mt-3">texto</p>
-            <p class="card-text"><small class="text-muted">data</small></p>
+            <h5 class="card-title m-0">{{item.title}}</h5>
+            <p><img src="{{item.image}}" alt="Imagem da publicação" width="250" height="250"> </p>
+            <small class="text-muted">Tema: {{item.topic.name}}</small>
+            <p class="card-text mt-3">{{item.text}}</p>
+            <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
 
-            <a class="text-info mr-3" href="">Editar</a>
-            <a class="text-danger" href="">Apagar</a>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-      <div class="card-columns" >
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title m-0">titulo</h5>
-
-            <p class="card-text mt-3">texto</p>
-            <p class="card-text"><small class="text-muted">data</small></p>
-
-            <p class="card-text"><small class="text-muted">by: user</small></p>
+            <a class="text-info mr-3" [routerLink]="['/edit-post', item.id]">Editar</a>
+            <a class="text-danger" [routerLink]="['/delete-post', item.id]" >Apagar</a>
 
           </div>
         </div>

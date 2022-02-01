@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Topic } from 'src/app/model/Topic';
+import { TopicService } from 'src/app/service/topic.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-delete-topic',
@@ -7,9 +11,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteTopicComponent implements OnInit {
 
-  constructor() { }
+  topic: Topic = new Topic()
+  idTopic: number
 
-  ngOnInit(): void {
+  constructor(
+    private topicService: TopicService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+      }
+
+      this.idTopic = this.route.snapshot.params['id']
+      this.findByIdTopic(this.idTopic)
+    }
+
+    findByIdTopic(id: number){
+      this.topicService.getByIdTopic(id).subscribe((resp: Topic)=>{
+        this.topic = resp
+      })
+    }
+
+    delete(){
+      this.topicService.deleteTopic(this.idTopic).subscribe(()=>{
+        alert('Tópico apagado com sucesso!')
+        this.router.navigate(['/topic'])
+      })
+    }
+  
+  
   }
 
-}
+

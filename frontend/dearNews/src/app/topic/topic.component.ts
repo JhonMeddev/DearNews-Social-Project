@@ -14,6 +14,9 @@ export class TopicComponent implements OnInit {
   topic: Topic = new Topic()
   listTopic: Topic[]
 
+
+  idTopic: number
+
   constructor(
     private router: Router,
     private topicService : TopicService
@@ -23,12 +26,19 @@ export class TopicComponent implements OnInit {
     window.scroll (0,0)
 
     if(environment.token == ''){
+      alert('Sua sessão expirou, faça o login novamente.')
       this.router.navigate(['/login'])
     }
 
     this.findAllTopic()
   }
 
+
+  findByIdTopic(){
+    this.topicService.getByIdTopic(this.idTopic).subscribe((resp: Topic) =>{
+      this.topic = resp
+    })
+  }
 
   findAllTopic(){
     this.topicService.getAllTopic().subscribe((resp: Topic[]) => {

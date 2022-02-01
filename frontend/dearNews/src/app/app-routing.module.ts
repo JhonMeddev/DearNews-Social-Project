@@ -1,3 +1,5 @@
+import { DeleteTopicComponent } from './delete/delete-topic/delete-topic.component';
+import { EditTopicComponent } from './edit/edit-topic/edit-topic.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -7,6 +9,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TopicComponent } from './topic/topic.component';
+import { EditPostComponent } from './edit/edit-post/edit-post.component';
+import { DeletePostComponent } from './delete/delete-post/delete-post.component';
 
 const routes: Routes = [
 
@@ -20,6 +24,12 @@ const routes: Routes = [
     {path :'register', component: RegisterComponent},
 
     {path :'topic', component: TopicComponent},
+
+    {path: 'edit-topic/:id', component: EditTopicComponent},
+    {path: 'delete-topic/:id', component: DeleteTopicComponent},
+
+    {path: 'edit-post/:id', component: EditPostComponent},
+    {path: 'delete-post/:id', component: DeletePostComponent},
 
 
 ];

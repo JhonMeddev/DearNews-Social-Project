@@ -1,6 +1,6 @@
 <div class="container mt-5">
 
-  <div class="row bg-secondary">
+  <div class="row bg-primary">
     <div class="col-md-12 text-white">
 
       <a routerLink='/inicio' class="text-white text-left">
@@ -46,13 +46,18 @@
 
   <div class="row d-flex justify-content-center mt-4 mb-5">
     <div class="col-md-8 px-2 py-5">
-      <h2 class="text-center text-secondary mb-5">Todos os Tópicos</h2>
+      <h2 class="text-center text-primary mb-5">Todos os Tópicos</h2>
 
           <select name="topic" id="topic" class="form-control" [(ngModel)]='idTopic' (change)='findByIdTopic()'>
 
             <option *ngFor='let item of listaTopic' value="{{item.id}}">{{item.name}}</option>
 
           </select>
+
+          <td class="d-flex justify-content-center mt-3">
+            <button class="btn btn-outline-danger mr-3" [routerLink]="['/delete-topic', topic.id]">Apagar</button>
+            <button class="btn btn-outline-primary" [routerLink]="['/edit-topic', topic.id]">Editar</button>
+          </td>
 
         </div>
 

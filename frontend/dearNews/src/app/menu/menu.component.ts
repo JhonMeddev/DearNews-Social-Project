@@ -12,7 +12,8 @@ export class MenuComponent implements OnInit {
     public auth: AuthService,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
   }
 
 }

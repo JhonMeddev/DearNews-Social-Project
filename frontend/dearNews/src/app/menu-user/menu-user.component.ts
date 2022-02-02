@@ -1,6 +1,7 @@
+import { UserModel } from './../model/UserModel';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -14,9 +15,10 @@ export class MenuUserComponent implements OnInit {
   photo = environment.photo;
   id = environment.id;
 
+
   constructor(
     private router: Router,
-    public authService: AuthService
+    public authService: AuthService,
   ) { }
 
   ngOnInit(){
@@ -29,5 +31,7 @@ export class MenuUserComponent implements OnInit {
     environment.photo = ''
     environment.id =  0
   }
+
+
 
 }

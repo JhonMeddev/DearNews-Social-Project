@@ -3,5 +3,5 @@
     min-height: 80vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80vh;
+    background-size: contain;
 }

@@ -36,6 +36,7 @@
 
       <a class="nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Todas Postagens</a>
 
+
       <a (click)='findByIdUser()' class="nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" *ngIf="authService.logado()">Minhas Postagens</a>
 
     </div>
@@ -45,13 +46,19 @@
 
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
+      <div class="d-flex justify-content-center w-100">
+
+        <input [(ngModel)]="titlePosts" (keyup)='findByTitle()' class="form-control mr-sm-2 w-50 mb-5" type="search" placeholder="Pesquisar" aria-label="Search">
+
+      </div>
+
       <div class="card-columns">
         <div class="card text-center" *ngFor='let item of listPost'>
           <div class="card-body">
             <h5 class="card-title m-0">{{item.title}}</h5>
-            <div class="col-md-3">
-              <img src="{{item.image}}" alt="Imagem da publicação" width="300" height="300">
-            </div>
+
+              <img class="img-fluid" src="{{item.image}}" alt="Imagem da publicação">
+
             <small class="text-muted">Tema: {{item.topic.name}}</small>
             <p class="card-text mt-3">{{item.text}}</p>
             <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>

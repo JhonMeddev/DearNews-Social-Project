@@ -33,8 +33,8 @@ export class PostService {
 
   }
 
-  getByTitlePosts(title: string): Observable<Post>{
-    return this.http.get<Post>(`https://dearnews.herokuapp.com/post/title/${title}`)
+  getByTitlePosts(title: string): Observable<Post[]>{
+    return this.http.get<Post[]>(`https://dearnews.herokuapp.com/post/title/${title}`)
   }
 
   getByText(text: string): Observable<Post>{

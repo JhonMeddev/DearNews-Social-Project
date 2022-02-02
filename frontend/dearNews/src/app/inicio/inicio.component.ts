@@ -17,6 +17,7 @@ export class InicioComponent implements OnInit {
 
   post: Post = new Post();
   listPost: Post[]
+  titlePosts: string
 
   topic: Topic = new Topic();
   listTopic: Topic[]
@@ -73,6 +74,17 @@ export class InicioComponent implements OnInit {
       this.user = resp
 
     })
+  }
+
+  findByTitle(){
+
+    if(this.titlePosts == ''){
+      this.getAllPosts()
+    }else{
+      this.postService.getByTitlePosts(this.titlePosts).subscribe((resp: Post[])=> {
+        this.listPost = resp
+      })
+    }
   }
 
   publicar(){

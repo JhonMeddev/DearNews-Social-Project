@@ -1,3 +1,7 @@
 .tamanho{
   height: 56vh;
 }
+
+body{
+  background: linear-gradient(to bottom, #4b79a1, #283e51);
+}

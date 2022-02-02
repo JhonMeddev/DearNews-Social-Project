@@ -1,3 +1,4 @@
+import { EditUserComponent } from './edit/edit-user/edit-user.component';
 import { DeleteTopicComponent } from './delete/delete-topic/delete-topic.component';
 import { EditTopicComponent } from './edit/edit-topic/edit-topic.component';
 import { NgModule } from '@angular/core';
@@ -30,6 +31,8 @@ const routes: Routes = [
 
     {path: 'edit-post/:id', component: EditPostComponent},
     {path: 'delete-post/:id', component: DeletePostComponent},
+
+    {path: 'edit-user/:id', component: EditUserComponent},
 
 
 ];

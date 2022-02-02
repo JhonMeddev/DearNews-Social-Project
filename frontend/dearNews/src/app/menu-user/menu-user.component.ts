@@ -15,13 +15,19 @@ export class MenuUserComponent implements OnInit {
   photo = environment.photo;
   id = environment.id;
 
+  user: UserModel = new UserModel();
+  idUser = environment.id
+
+  fragment : string
 
   constructor(
     private router: Router,
     public authService: AuthService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(){
+
   }
 
   sair(){
@@ -30,6 +36,19 @@ export class MenuUserComponent implements OnInit {
     environment.name = ''
     environment.photo = ''
     environment.id =  0
+  }
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: UserModel) => {
+      this.user = resp
+
+    })
+  }
+
+  myPosts(){
+    this.router.navigate(['/inicio'], {fragment: 'nav-profile'})
+    this.findByIdUser()
+
   }
 
 

@@ -2,6 +2,10 @@
   height: 56vh;
 }
 
-body{
+.body{
   background: linear-gradient(to bottom, #4b79a1, #283e51);
+}
+
+.html{
+  background: linear-gradient(to right, #000000, #434343);
 }

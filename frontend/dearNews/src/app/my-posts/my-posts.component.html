@@ -1,0 +1,15 @@
+<div class="card-columns">
+  <div class="card text-center" *ngFor='let item of user.post' >
+    <div class="card-body">
+      <h5 class="card-title m-0">{{item.title}}</h5>
+      <p><img src="{{item.image}}" alt="Imagem da publicação" width="250" height="250"> </p>
+      <small class="text-muted">Tema: {{item.topic.name}}</small>
+      <p class="card-text mt-3">{{item.text}}</p>
+      <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+
+      <a class="text-info mr-3" [routerLink]="['/edit-post', item.id]">Editar</a>
+      <a class="text-danger" [routerLink]="['/delete-post', item.id]" >Apagar</a>
+
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import { MyPostsComponent } from './my-posts/my-posts.component';
 import { EditUserComponent } from './edit/edit-user/edit-user.component';
 import { DeleteTopicComponent } from './delete/delete-topic/delete-topic.component';
 import { EditTopicComponent } from './edit/edit-topic/edit-topic.component';
@@ -33,6 +34,8 @@ const routes: Routes = [
     {path: 'delete-post/:id', component: DeletePostComponent},
 
     {path: 'edit-user/:id', component: EditUserComponent},
+
+    {path: 'my-posts/:id', component: MyPostsComponent},
 
 
 ];

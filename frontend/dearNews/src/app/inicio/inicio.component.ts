@@ -1,3 +1,4 @@
+import { UsuarioLogin } from './../model/UsuarioLogin';
 import { UserModel } from './../model/UserModel';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
@@ -25,6 +26,8 @@ export class InicioComponent implements OnInit {
 
   user: UserModel = new UserModel();
   idUser = environment.id
+
+  userLogin: UsuarioLogin = new UsuarioLogin()
 
 
 
@@ -100,6 +103,30 @@ export class InicioComponent implements OnInit {
       this.post = new Post()
       this.getAllPosts()
     })
+  }
+
+  entrar(){
+    this.authService.entrar(this.userLogin).subscribe({
+      next: (resp: UsuarioLogin)=>{
+      this.userLogin = resp
+      environment.token = this.userLogin.token
+      environment.name = this.userLogin.name
+      environment.email = this.userLogin.email
+      environment.photo = this.userLogin.photo
+      environment.id = this.userLogin.id
+      console.log(environment)
+      this.router.navigate(['/inicio'])
+      },
+      error: erro => {
+      if(erro.status == 500){
+        alert('Usuário ou senha estão incorretos')
+        console.log(this.userLogin)
+      }
+      if(erro.status == 401){
+        alert('Usuário ou senha estão incorretos')
+      }
+    },
+    });
   }
 
 }

@@ -45,12 +45,4 @@ export class MenuUserComponent implements OnInit {
     })
   }
 
-  myPosts(){
-    this.router.navigate(['/inicio'], {fragment: 'nav-profile'})
-    this.findByIdUser()
-
-  }
-
-
-
 }

@@ -1,11 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+
 .tamanho{
   height: 56vh;
 }
 
-.body{
+/*.body{
   background: linear-gradient(to bottom, #4b79a1, #283e51);
-}
+}*/
 
 .html{
-  background: linear-gradient(to right, #000000, #434343);
+  background: #f2fcfe;
+}
+
+.img-profile{
+  height: 150px;
+  weight : 150px;
+}
+
+.user-name{
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.f-title{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 30px;
+}
+
+.f-tema{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+}
+
+.f-text{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+
+}
+
+.bg-user{
+  background: linear-gradient(to top, #2980b9, #6dd5fa, #ffffff);
+}
+
+.img-post{
+  max-width:90%;
+  height: auto;
+
 }

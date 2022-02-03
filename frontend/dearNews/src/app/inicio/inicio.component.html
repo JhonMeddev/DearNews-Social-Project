@@ -60,7 +60,7 @@
               <div class="row d-flex justify-content-center mt-2 mb-4">
                   <div class="col-md-6">
                       <button class="btn btn-outline-dark mr-2" data-toggle="modal" data-target="#staticBackdrop" *ngIf="authService.logado()">Nova Postagem</button>
-                      <a class="btn btn-outline-dark" href="#postagens">Ver Postagens</a>
+                      <a class="btn btn-outline-dark ml-2 mt-2" href="#postagens">Ver Postagens</a>
                   </div>
               </div>
 
@@ -96,19 +96,24 @@
           </div>
 
 
-          <div class="card bg-secondary mt-3 mb-3" *ngFor='let item of listPost'>
+          <div class="card mt-3 mb-3" *ngFor='let item of listPost'>
 
-              <img src="{{user.photo}}" alt="" class="img-fluid rounded">
+            <div class="row ml-3 mt-3">
 
-            <img class="img-fluid" src="{{item.image}}" alt="Imagem da publicação">
-            <div class="card mt-5 bg-primary" >
-              <div class="card-body bg-danger ">
-                <h5 class="card-title m-0 mb-3">{{item.title}}</h5>
-                  <p ><small class="text-muted text-left">Tema: {{item.topic.name}}</small></p>
-                <p class="card-text mt-3">{{item.text}}</p>
-                <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
-                <p class="card-text"><small class="text-muted">by: {{item.userModel.name}}</small></p>
+              <div class="col-md-2 h-25 border border-dark rounded bg-user">
+                <img src="{{item.userModel.photo}}" alt="perfil" class="img-fluid img-profile float-left rounded-circle mt-2 border border-white">
+                <p class="card-text text-center text-uppercase user-name">{{item.userModel.name}}</p>
               </div>
+
+              <div class="col-md-8 mb-2 ml-5 border border-dark">
+                <h5 class="card-title text-center text-uppercase mt-2 mb-0 f-title">{{item.title}}</h5>
+                <p class="text-left mt-0 f-tema"><small>Tema: {{item.topic.name}}</small></p>
+                <img class="img-fluid img-post" src="{{item.image}}" alt="Imagem da publicação">
+                <p class="card-text text-justify f-text">{{item.text}}</p>
+                <p class="card-text"><small class="text-body">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+              </div>
+
+
             </div>
           </div>
 

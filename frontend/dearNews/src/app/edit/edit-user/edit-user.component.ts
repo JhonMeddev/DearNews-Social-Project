@@ -15,7 +15,7 @@ export class EditUserComponent implements OnInit {
   idUser: number;
   confirmarSenha: string;
   tipoUsuario: string;
-  
+
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
@@ -24,6 +24,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    this.authService.refreshToken()
 
     if (environment.token == "") {
       this.router.navigate(["/logar"])
@@ -41,8 +42,9 @@ export class EditUserComponent implements OnInit {
   }
 
   atualizar() {
+
     this.user.tipo = this.tipoUsuario;
-    console.log(this.user)
+
     if(this.user.password != this.confirmarSenha) {
       alert("Senhas divergentes.");
     }else {
@@ -55,7 +57,7 @@ export class EditUserComponent implements OnInit {
       environment.name="";
       environment.photo="";
       environment.id= 0;
-      this.router.navigate(["/login"]);  
+      this.router.navigate(["/login"]);
     }
   }
 

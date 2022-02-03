@@ -7,9 +7,9 @@
     <li class="nav-item mt-5">
       <p class="m-0 font-weight-bold text-light fs-16">Olá, {{this.authService.nome()}}</p>
     </li>
-    <li class="nav-item mt-5">
-      <a [routerLink]="['/user-edit', id]"><p class="text-light fs-16 m-0">Editar Perfil <i class="far fa-edit"></i></p></a>
-    </li>
+
+      <a [routerLink]="['/edit-user', id]" ><p class="text-light fs-16 m-0">Editar Perfil <i class="far fa-edit"></i></p></a>
+
 
   </ul>
 

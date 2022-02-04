@@ -18,8 +18,6 @@ export class MenuUserComponent implements OnInit {
   user: UserModel = new UserModel();
   idUser = environment.id
 
-  fragment : string
-
   constructor(
     private router: Router,
     public authService: AuthService,

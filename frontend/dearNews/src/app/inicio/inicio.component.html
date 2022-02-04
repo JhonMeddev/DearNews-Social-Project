@@ -2,7 +2,7 @@
 
   <div class="container body">
 
-    <div class="container mt-5 tamanho">
+    <div class="container tamanho">
 
       <div class="row pt-5 pb-0 mb-0">
 
@@ -10,9 +10,9 @@
 
         <div class="col-md-6">
 
-          <form class="mt-5 bg-secondary border border-dark rounded">
+          <form class="mt-5 border border-dark rounded">
 
-            <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center bg-dark rounded-bottom text-white" style="letter-spacing: 1px;">Bem Vindo</h3>
+            <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center rounded-bottom text-white" style="letter-spacing: 1px;">Bem Vindo</h3>
 
             <div class="form-outline mb-4 ml-3 mr-3 pt-3">
               <input [(ngModel)]="userLogin.email" type="email" id="email" name="email" class="form-control form-control-lg border border-dark" />
@@ -36,7 +36,7 @@
 
 
           <div class="col-md-6">
-            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/04/27/11/48/sign-741813_960_720.jpg" alt="Bem Vindo">
+            <img class="img-fluid" src="https://imgur.com/GKFu0L0.png" alt="Bem Vindo">
           </div>
 
 
@@ -75,7 +75,7 @@
 
 
 
-    <div class="container mb-5" id="postagens">
+    <div class="container" id="postagens">
 
       <nav>
         <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
@@ -96,7 +96,7 @@
           </div>
 
 
-          <div class="card mt-3 mb-3" *ngFor='let item of listPost'>
+          <div class="card mt-3 bg-user1" *ngFor='let item of listPost'>
 
             <div class="row ml-3 mt-3">
 

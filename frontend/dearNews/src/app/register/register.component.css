@@ -1,10 +1,7 @@
 #img-bg{
-    min-height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+
 }
 
 .bg{
-  background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6);
+  background: linear-gradient(to right, #076585, #fff);
 }

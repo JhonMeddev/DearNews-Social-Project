@@ -1,4 +1,9 @@
 .tamanho{
-  min-height: 75vh;
+  min-height: 100vh;
 }
 
+.bg{
+
+    background: linear-gradient(to right, #076585, #fff);
+
+}

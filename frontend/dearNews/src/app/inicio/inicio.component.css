@@ -15,7 +15,7 @@
 }*/
 
 .html{
-  background: #f2fcfe;
+  background: linear-gradient(to right, #076585, #fff);
 }
 
 .img-profile{
@@ -43,8 +43,13 @@
 
 }
 
+.bg-user1{
+  background: linear-gradient(to right, #076585, #fff);
+
+}
+
 .bg-user{
-  background: linear-gradient(to top, #2980b9, #6dd5fa, #ffffff);
+
 }
 
 .img-post{

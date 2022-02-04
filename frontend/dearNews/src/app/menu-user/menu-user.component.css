@@ -1,14 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+
+
 .menu-user{
-  margin: 5;
   height: 60vh;
-  position: absolute;
-  border-radius: 1rem;
+  position: fixed;
+  top: 15vh;
+  left: 0;
+  border-top-right-radius:    4em 4em;
+  border-bottom-right-radius:    4em 4em;
+  background: #2980B9;
 }
 
 a{
   cursor: pointer;
 }
 
-.fs-16{
+.profile-name{
+  font-size: 25px;
+  font-family: 'Teko', sans-serif;
   float: bottom !important;
+  color : #fff;
+}
+
+.font-menu{
+  font-family: 'Teko', sans-serif;
+  color: aliceblue;
+}
+
+.edit-perfil{
+  font-size: 15px;
+}
+
+.img-profile{
+  border-top-right-radius:    4em 4em;
+  border-bottom-right-radius:    4em 4em;
 }

@@ -25,12 +25,15 @@ export class LoginComponent implements OnInit {
   entrar(){
     this.auth.entrar(this.userLogin).subscribe({
       next: (resp: UsuarioLogin)=>{
+
       this.userLogin = resp
       environment.token = this.userLogin.token
       environment.name = this.userLogin.name
       environment.email = this.userLogin.email
       environment.photo = this.userLogin.photo
       environment.id = this.userLogin.id
+      environment.userType = this.userLogin.tipo
+    
       console.log(environment)
       this.router.navigate(['/inicio'])
       },

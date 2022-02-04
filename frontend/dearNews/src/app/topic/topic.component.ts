@@ -29,6 +29,10 @@ export class TopicComponent implements OnInit {
       alert('Sua sessão expirou, faça o login novamente.')
       this.router.navigate(['/login'])
     }
+    if(environment.userType != "adm") {
+      alert("Sua conta não possui essa permissão!")
+      this.router.navigate(["/inicio"])
+    }
 
     this.topicService.refreshToken()
     this.findAllTopic()

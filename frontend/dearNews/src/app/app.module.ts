@@ -22,6 +22,10 @@ import { DeleteTopicComponent } from './delete/delete-topic/delete-topic.compone
 import { EditUserComponent } from './edit/edit-user/edit-user.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
 import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { Routes,RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -48,7 +52,9 @@ import { AlertsComponent } from './alerts/alerts.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule,
   ],
   providers: [{
     provide : LocationStrategy,

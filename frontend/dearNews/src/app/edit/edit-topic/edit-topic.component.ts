@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Topic } from 'src/app/model/Topic';
+import { AlertsService } from 'src/app/service/alerts.service';
 import { TopicService } from 'src/app/service/topic.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -16,7 +17,8 @@ export class EditTopicComponent implements OnInit {
   constructor(
     private topicService: TopicService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +39,7 @@ export class EditTopicComponent implements OnInit {
   update(){
     this.topicService.putTopic(this.topic).subscribe((resp: Topic)=>{
       this.topic = resp
-      alert('Tópico atualizado com sucesso!')
+      this.alerts.showAlertInfo('Tópico atualizado com sucesso!')
       this.router.navigate(['/topic'])
     })
   }

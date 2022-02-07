@@ -3,6 +3,7 @@ import { UsuarioLogin } from './../model/UsuarioLogin';
 import { AuthService } from './../service/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { AlertsService } from '../service/alerts.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router : Router
+    private router : Router,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit(){
@@ -39,11 +41,11 @@ export class LoginComponent implements OnInit {
       },
       error: erro => {
       if(erro.status == 500){
-        alert('Usuário ou senha estão incorretos')
+        this.alerts.showAlertDanger('Usuário ou senha estão incorretos')
         console.log(this.userLogin)
       }
       if(erro.status == 401){
-        alert('Usuário ou senha estão incorretos')
+        this.alerts.showAlertDanger('Usuário ou senha estão incorretos')
       }
     },
     });

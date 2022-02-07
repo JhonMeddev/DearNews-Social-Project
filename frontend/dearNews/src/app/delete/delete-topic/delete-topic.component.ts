@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Topic } from 'src/app/model/Topic';
+import { AlertsService } from 'src/app/service/alerts.service';
 import { TopicService } from 'src/app/service/topic.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -17,7 +18,8 @@ export class DeleteTopicComponent implements OnInit {
   constructor(
     private topicService: TopicService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerts: AlertsService,
   ) { }
 
   ngOnInit() {
@@ -38,7 +40,7 @@ export class DeleteTopicComponent implements OnInit {
 
     delete(){
       this.topicService.deleteTopic(this.idTopic).subscribe(()=>{
-        alert('Tópico apagado com sucesso!')
+        this.alerts.showAlertInfo('Tópico apagado com sucesso!')
         this.router.navigate(['/topic'])
       })
     }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserModel } from 'src/app/model/UserModel';
+import { AlertsService } from 'src/app/service/alerts.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -19,7 +20,8 @@ export class EditUserComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
@@ -46,13 +48,13 @@ export class EditUserComponent implements OnInit {
     this.user.tipo = this.tipoUsuario;
 
     if(this.user.password != this.confirmarSenha) {
-      alert("Senhas divergentes.");
+      this.alerts.showAlertDanger("Senhas divergentes.");
     }else {
       this.authService.cadastrar(this.user).subscribe((resp: UserModel)=>{
         this.user = resp
         this.router.navigate(["/inicio"])
       });
-      alert("Conta atualizada, faça login para continuar.");
+      this.alerts.showAlertInfo("Conta atualizada, faça login para continuar.");
       environment.token="";
       environment.name="";
       environment.photo="";

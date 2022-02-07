@@ -25,7 +25,7 @@ const routes: Routes = [
     {path:'login', component: LoginComponent},
     {path :'register', component: RegisterComponent},
 
-    {path :'topic', component: TopicComponent},
+    {path :'topic/:id', component: TopicComponent},
 
     {path: 'edit-topic/:id', component: EditTopicComponent},
     {path: 'delete-topic/:id', component: DeleteTopicComponent},

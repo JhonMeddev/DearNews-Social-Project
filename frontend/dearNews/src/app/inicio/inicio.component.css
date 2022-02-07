@@ -10,13 +10,12 @@
   height: 56vh;
 }
 
-/*.body{
-  background: linear-gradient(to bottom, #4b79a1, #283e51);
-}*/
-
 .html{
-  background: linear-gradient(to right, #076585, #fff);
+  background: rgb(1, 9, 20);
+  color: rgb(255, 255, 255);
+
 }
+
 
 .img-profile{
   height: 150px;
@@ -44,12 +43,18 @@
 }
 
 .bg-user1{
-  background: linear-gradient(to right, #076585, #fff);
+  background: rgb(2, 17, 39);
 
 }
 
 .bg-user{
 
+  background: rgb(2, 17, 39);
+
+}
+
+.modal{
+  color: rgb(2, 17, 39);
 }
 
 .img-post{

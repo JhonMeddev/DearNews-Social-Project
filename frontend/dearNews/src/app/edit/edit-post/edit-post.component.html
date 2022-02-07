@@ -1,24 +1,24 @@
-<div class="container mt-4 mb-4">
+<div class="container-fluid corfundo">
 
     <div class="row">
         <div class="col-md-12">
 
-            <h1 class="text-center">Atualizar Postagem</h1>
+            <h1 class="text-white text-center mt-3">Atualizar Postagem</h1>
 
         </div>
     </div>
 
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center ">
         <div class="col-md-6">
 
             <div class="form-group">
-                <label for="titulo">Título</label>
+                <label class="text-white" for="titulo">Título</label>
                 <input [(ngModel)]="post.title" type="text" class="form-control" id="titulo"
                     placeholder="Digite o título da postagem...">
             </div>
 
             <div class="form-group">
-                <label for="tema">Selecione a categoria</label>
+                <label class="text-white" for="tema">Selecione a categoria</label>
                 <select class="form-control" name="tema" id="tema" [(ngModel)]="idTopic" (change)="findByIdTema()">
                     <option *ngFor="let item of listaTopic" value="{{item.id}}">
                         {{item.description}}
@@ -27,11 +27,11 @@
             </div>
 
             <div class="form-group">
-                <label for="titulo">Texto</label>
+                <label class="text-white" for="titulo">Texto</label>
                 <textarea [(ngModel)]="post.text" class="form-control" name="texto" id="texto" rows="8"></textarea>
             </div>
 
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mb-3">
                 <button class="btn btn-danger mr-1 ml-1" routerLink="/inicio">Cancelar</button>
                 <button class="btn btn-success mr-1 ml-1" (click)="atualizar()">Atualizar</button>
             </div>

@@ -2,8 +2,32 @@
   min-height: 100vh;
 }
 
-.bg{
+.bg-back{
+    background: rgb(1, 9, 20);
+}
 
-    background: linear-gradient(to right, #076585, #fff);
 
+.fab{
+  font-size: 20pt;
+  color: gray;
+  padding: 5px;
+}
+
+.fa-github:hover{
+  color:  #171515;
+}
+
+.fa-linkedin:hover{
+  color: #0072b1;
+}
+
+.voltar{
+  border-color: black;
+  color: black;
+}
+.voltar:hover{
+  border-color: black;
+  color: black;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
 }

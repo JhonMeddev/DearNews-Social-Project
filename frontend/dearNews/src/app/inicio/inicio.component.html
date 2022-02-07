@@ -10,9 +10,9 @@
 
         <div class="col-md-6">
 
-          <form class="mt-5 border border-info rounded">
+          <form class="mt-5 border border-white rounded">
 
-            <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center rounded-bottom text-white" style="letter-spacing: 1px;">Bem Vindo</h3>
+            <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center rounded-bottom text-info">Bem Vindo</h3>
 
             <div class="form-outline mb-4 ml-3 mr-3 pt-3">
               <input [(ngModel)]="userLogin.email" type="email" id="email" name="email" class="form-control form-control-lg border border-info" />
@@ -36,7 +36,7 @@
 
 
           <div class="col-md-6">
-            <img class="img-fluid" src="https://imgur.com/GKFu0L0.png" alt="Bem Vindo">
+            <img class="img-fluid" src="https://imgur.com/ne0ssAO.png" alt="Bem Vindo">
           </div>
 
 
@@ -59,15 +59,15 @@
 
               <div class="row d-flex justify-content-center mt-2 mb-4">
                   <div class="col-md-6">
-                      <button class="btn btn-outline-dark mr-2" data-toggle="modal" data-target="#staticBackdrop" *ngIf="authService.logado()">Nova Postagem</button>
-                      <a class="btn btn-outline-dark ml-2 mt-2" href="#postagens">Ver Postagens</a>
+                      <button class="btn btn-outline-info mr-2" data-toggle="modal" data-target="#staticBackdrop" *ngIf="authService.logado()">Nova Postagem</button>
+                      <a class="btn btn-outline-info ml-2 mt-2" href="#postagens">Ver Postagens</a>
                   </div>
               </div>
 
           </div>
 
           <div class="col-md-6 d-flex justify-content-center">
-              <img src="https://imgur.com/8pDwXWm.png" alt="" width="600px" height="600px">
+              <img src="/assets/images/logo.png" alt="" width="600px" height="600px">
           </div>
 
       </div>
@@ -85,6 +85,7 @@
         </div>
 
       </nav>
+
       <div class="tab-content mt-5" id="nav-tabContent">
 
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -98,18 +99,31 @@
 
           <div class="card mt-3 bg-user1" *ngFor='let item of listPost'>
 
-            <div class="row ml-3 mt-3">
+            <div class="row ml-3 mb-0 mt-0">
 
-              <div class="col-md-2 h-25  rounded bg-user">
-                <img src="{{item.userModel.photo}}" alt="perfil" class="img-fluid img-profile float-left rounded-circle mt-2 border border-white">
-                <p class="card-text text-center text-uppercase user-name">{{item.userModel.name}}</p>
+              <div class="col-md-2 p-0 h-25 rounded bg-user">
+
+                <div class="row">
+                  <img src="{{item.userModel.photo}}" alt="perfil" class="img-fluid img-profile float-left rounded mt-2 border border-white w-50 h-50">
+                </div>
+
+
+                <div class="row mt-2 justify-content-start">
+                  <p class="card-text text-uppercase user-name">{{item.userModel.name}}</p>
+                </div>
+
               </div>
 
-              <div class="col-md-8 mb-2 ml-5 ">
-                <h5 class="card-title text-center text-uppercase mt-2 mb-0 f-title">{{item.title}}</h5>
+              <div class="col-md-9 mb-2 ml-0 p-0 mt-2 border ">
+
+                <h5 class="card-title text-left text-uppercase mt-2 mb-0 f-title">{{item.title}}</h5>
+
                 <p class="text-left mt-0 f-tema"><small>Tema: {{item.topic.name}}</small></p>
-                <img class="img-fluid img-post" src="{{item.image}}" alt="Imagem da publicação">
+
+                <img class="img-contain img-post" src="{{item.image}}" alt="Imagem da publicação">
+
                 <p class="card-text text-justify f-text">{{item.text}}</p>
+
                 <p class="card-text"><small class="text-white">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
               </div>
 

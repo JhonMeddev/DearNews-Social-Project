@@ -5,3 +5,8 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.bg-color{
+    background: rgb(1, 9, 20);
+    color: rgb(255, 255, 255);
+}

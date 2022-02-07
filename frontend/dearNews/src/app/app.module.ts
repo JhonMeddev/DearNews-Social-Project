@@ -21,6 +21,7 @@ import { DeletePostComponent } from './delete/delete-post/delete-post.component'
 import { DeleteTopicComponent } from './delete/delete-topic/delete-topic.component';
 import { EditUserComponent } from './edit/edit-user/edit-user.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
+import { AlertsComponent } from './alerts/alerts.component';
 
 
 @NgModule({
@@ -41,12 +42,13 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
     DeleteTopicComponent,
     EditUserComponent,
     MyPostsComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [{
     provide : LocationStrategy,

@@ -114,7 +114,8 @@ export class InicioComponent implements OnInit {
       environment.email = this.userLogin.email
       environment.photo = this.userLogin.photo
       environment.id = this.userLogin.id
-      console.log(environment)
+      environment.userType = this.userLogin.tipo
+
       this.router.navigate(['/inicio'])
       },
       error: erro => {

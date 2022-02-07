@@ -1,0 +1,39 @@
+.bg-back{
+    background: rgb(1, 9, 20);
+}
+
+.bg-topic{
+    background: rgb(2, 17, 39);
+}
+
+.cadastrar{
+    border-color: white;
+    background: rgb(2, 17, 39);
+    border-width: 2px;
+    border-style: solid;
+    color: white;
+}
+
+.cadastrar:hover {
+    border-color: white;
+    background: white;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+    color: black;
+}
+
+.apagar {
+    border-color: red;
+    background: rgb(2, 17, 39);
+    border-width: 2px;
+    border-style: solid;
+    color: red;
+}
+
+.apagar:hover {
+    border-color: red;
+    background: red;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    color: white;
+}

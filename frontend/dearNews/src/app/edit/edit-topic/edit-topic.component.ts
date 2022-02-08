@@ -33,8 +33,8 @@ export class EditTopicComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
-    let id = this.route.snapshot.params['id']
-    this.findByIdTopic(id)
+    this.idTopic = this.route.snapshot.params['id']
+    this.findByIdTopic(this.idTopic)
   }
 
   findByIdTopic(id: number){

@@ -1,36 +1,37 @@
-  <section class="vh-70">
-    <div class="container-fluid bg-color">
+  <section class="vh-70 bg-color">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-6 text-black">
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
 
-          <div class="d-flex justify-content-center align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5 ">
 
-            <form class = "rounded p-3 border border-info" style="width: 23rem;">
+          <div class="col-md-8">
 
-              <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Login</h3>
+            <form class="border border-white rounded">
 
-              <div class="form-outline mb-4">
-                <input [(ngModel)]="userLogin.email" type="email" id="email" name="email" class="form-control form-control-lg" />
+              <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center rounded-bottom text-info">Bem Vindo</h3>
+
+              <div class="form-outline mb-4 ml-3 mr-3 pt-3">
+                <input [(ngModel)]="userLogin.email" type="email" id="email" name="email" class="form-control form-control-lg border border-info" />
                 <label class="form-label" for="form2Example18">Email</label>
               </div>
 
-              <div class="form-outline mb-4">
-                <input [(ngModel)]="userLogin.password" type="password" name="password" id="password" class="form-control form-control-lg" />
+              <div class="form-outline mb-4 ml-3 mr-3">
+                <input [(ngModel)]="userLogin.password" type="password" name="password" id="password" class="form-control form-control-lg border border-info" />
                 <label class="form-label" for="form2Example28">Senha</label>
               </div>
 
-              <div class="pt-1 mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="entrar()">Entrar</button>
+              <div class="mb-4 ml-3 text-center">
+                <button class="btn btn-info btn-lg border border-info" type="submit" (click)="entrar()">Entrar</button>
               </div>
-              <p>Não tem conta ? <a routerLink = '/register' class="link-info">Cadastre-se aqui.</a></p>
+              <p class="ml-5 ">Não tem conta ? <a routerLink = '/register' class="link-info">Cadastre-se aqui.</a></p>
 
             </form>
 
           </div>
 
         </div>
-        <div class="col-sm-6 px-0 d-none d-sm-block">
-          <img src="https://media.discordapp.net/attachments/913140182071521283/939146570589429770/pexels-photo-7869453.png" alt="Login image" class="img-fluid" style="object-fit: cover; object-position: left;">
+        <div class="container-fluid col-6 p-0">
+          <img class="img-fluid" src="https://media.discordapp.net/attachments/913140182071521283/939146570589429770/pexels-photo-7869453.png" alt="Bem Vindo">
         </div>
       </div>
     </div>

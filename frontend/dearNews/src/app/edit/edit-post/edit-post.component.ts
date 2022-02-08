@@ -5,6 +5,7 @@ import { Topic } from 'src/app/model/Topic';
 import { AlertsService } from 'src/app/service/alerts.service';
 import { PostService } from 'src/app/service/post.service';
 import { TopicService } from 'src/app/service/topic.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-edit-post',
@@ -28,6 +29,14 @@ export class EditPostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    window.scroll (0,0)
+      
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+      this.alerts.showAlertDanger('Seu Token Expirou Faça Login Novamente')
+      }
+
     let id = this.route.snapshot.params["id"];
     this.findByIdPost(id);
     this.findAllTopics();

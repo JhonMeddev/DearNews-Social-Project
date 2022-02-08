@@ -1,3 +1,4 @@
+import { noUndefined } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Topic } from 'src/app/model/Topic';
@@ -13,8 +14,8 @@ import { environment } from 'src/environments/environment.prod';
 export class DeleteTopicComponent implements OnInit {
 
   topic: Topic = new Topic()
-  idTopic: number
-
+  idTopic : number 
+  
   constructor(
     private topicService: TopicService,
     private router: Router,
@@ -23,13 +24,21 @@ export class DeleteTopicComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll (0,0)
 
+    if(this.idTopic === undefined){
+      this.router.navigate(['/inicio'])
+      this.alerts.showAlertDanger('Selecione um Tópico para apagar')
+    }
+   
     if(environment.token == ''){
       this.router.navigate(['/login'])
+      this.alerts.showAlertDanger('Seu Token Expirou Faça Login Novamente')
       }
 
       this.idTopic = this.route.snapshot.params['id']
       this.findByIdTopic(this.idTopic)
+    
     }
 
     findByIdTopic(id: number){
@@ -44,7 +53,6 @@ export class DeleteTopicComponent implements OnInit {
         this.router.navigate(['/topic'])
       })
     }
-  
   
   }
 

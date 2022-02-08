@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment.prod';
 export class EditTopicComponent implements OnInit {
 
   topic: Topic = new Topic()
+  idTopic: number
 
   constructor(
     private topicService: TopicService,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Topic } from '../model/Topic';
+import { AlertsService } from '../service/alerts.service';
 import { TopicService } from '../service/topic.service'
 
 @Component({
@@ -19,18 +20,19 @@ export class TopicComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private topicService : TopicService
+    private topicService : TopicService,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
     window.scroll (0,0)
 
     if(environment.token == ''){
-      alert('Sua sessão expirou, faça o login novamente.')
+      this.alerts.showAlertDanger('Sua sessão expirou, faça o login novamente.')
       this.router.navigate(['/login'])
     }
     if(environment.userType != "adm") {
-      alert("Sua conta não possui essa permissão!")
+      this.alerts.showAlertDanger("Sua conta não possui essa permissão!")
       this.router.navigate(["/inicio"])
     }
 

@@ -22,6 +22,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    environment.email = ''
+    environment.id = 0
+    environment.name = ''
+    environment.photo = ''
+    environment.token = ''
+    environment.userType = ''
+   
   }
 
   entrar(){

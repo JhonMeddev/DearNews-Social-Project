@@ -6,6 +6,10 @@
     background: rgb(1, 9, 20);
 }
 
+.modal-content{
+  color: rgb(2, 17, 39);
+}
+
 
 .fab{
   font-size: 20pt;
@@ -30,4 +34,37 @@
   color: black;
   transform: scale(0.9);
   transition: all 0.3s ease;
+}
+
+.cardclr{
+  background: rgb(2, 17, 39);
+
+}
+
+img{
+  max-width:50%;
+  height: auto;
+
+}
+
+.card:hover{
+  background: rgb(57, 133, 247);
+  color: black;
+}
+
+.card{
+  color: white;
+}
+
+.kard:hover{
+  transform: scale(1.1);
+  transition: 1s;
+  opacity: 1;
+}
+
+.tecnologia-header:hover{
+  transform: scale(1.1);
+  transition: 1s;
+  opacity: 1;
+  background: white;
 }

@@ -4,11 +4,11 @@
 <section class="vh-40">
     <div class="container py-2 h-80">
       <div class="row d-flex justify-content-left align-items-center h-80">
-        <div class="col-12 col-md-12 col-lg-9 col-xl-9">
+        <div class="col-12 mt-5 mb-5">
           <div class="card shadow-2-strong rounded">
             <div class="card-body px-5 text-center py-1  bg">
 
-              <h3 class="mb-1 mt-4 text-white col-md-12 bg-info rounded-pill">Cadastro</h3>
+              <h3 class="mb-1 mt-4 text-info col-md-12">CADASTRO</h3>
 
               <div class="form-group" style='text-align:left'>
                 <label class="text-white" for="name">Nome:</label>
@@ -44,7 +44,7 @@
                 <label class="text-white" for="confirmsenha">Tipo de Usuário:</label>
                 <select (change)="tipoUser($event)" class="form-control" name="tipo" id="tipo">
                     <option>Selecione um tipo de usuário:</option>
-                    <option value="normal">Normal</option>
+                    <option value="normal">Padrão</option>
                     <option value="adm">Administrador</option>
                 </select>
             </div>
@@ -53,7 +53,7 @@
 
               <hr class="my-2">
 
-              <button class="btn btn-info btn-lg mr-4 ml-4" type="submit" (click)="register()">Cadastrar!</button>
+              <button class="btn btn-info btn-lg mr-4 ml-4" type="submit" (click)="register()">Cadastrar</button>
               <button class="btn btn-danger btn-lg mr-4 ml-4" routerLink='/login'>Cancelar</button>
 
               <hr class="my-2">

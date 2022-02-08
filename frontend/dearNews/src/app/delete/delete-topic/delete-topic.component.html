@@ -1,8 +1,8 @@
-<div class="container mb-5 mt-5 tamanho">
+<div class="container-fluid tamanho">
 
     <div class="row mb-5">
       <div class="col-md-12">
-        <h1 class="text-center text-secondary">Apagar Tópico</h1>
+        <h1 class="text-center text-secondary mt-5">Apagar Tópico</h1>
       </div>
     </div>
 
@@ -19,9 +19,9 @@
         </div>
       </div>
     
-      <div class="row">
+      <div class="row mb-5">
         <div class="col-md-12 d-flex justify-content-center">
-          <button class="btn btn-outline-danger mr-4" routerLink='/topic' >Não</button>
+          <button class="btn btn-outline-danger mr-4" [routerLink]="['/topic',idTopic]" >Não</button>
           <button class="btn btn-outline-primary" (click)='delete()'>Sim</button>
         </div>
       </div>

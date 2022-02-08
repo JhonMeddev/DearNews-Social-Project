@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/model/Post';
 import { Topic } from 'src/app/model/Topic';
+import { AlertsService } from 'src/app/service/alerts.service';
 import { PostService } from 'src/app/service/post.service';
 import { TopicService } from 'src/app/service/topic.service';
 
@@ -22,7 +23,8 @@ export class EditPostComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postService: PostService,
-    private topicService: TopicService
+    private topicService: TopicService,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit() {
@@ -49,7 +51,7 @@ export class EditPostComponent implements OnInit {
     this.post.topic = this.topic;
     this.postService.putPost(this.post).subscribe((resp: Post)=>{
       this.post = resp
-      alert("Postagem Atualizada!")
+      this.alerts.showAlertInfo("Postagem Atualizada!")
       this.router.navigate(["/inicio"])
     });
   }

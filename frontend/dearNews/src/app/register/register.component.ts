@@ -2,6 +2,7 @@ import { UserModel } from './../model/UserModel';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { AlertsService } from '../service/alerts.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private authService : AuthService,
-    private router: Router) { }
+    private router: Router,
+    private alerts: AlertsService
+    ) { }
 
   ngOnInit(){
     window.scroll(0,0)
@@ -34,12 +37,12 @@ export class RegisterComponent implements OnInit {
     this.user.tipo = this.tipoUsuario
 
     if(this.user.password != this.confirmarSenha){
-      alert('As senhas estão diferentes')
+      this.alerts.showAlertDanger('As senhas estão diferentes')
     }else{
       this.authService.cadastrar(this.user).subscribe((resp: UserModel) => {
         this.user = resp
         this.router.navigate(['/login'])
-        alert('Usuario cadastrado com sucesso !')
+        this.alerts.showAlertInfo('Usuario cadastrado com sucesso !')
       })
     }
   }

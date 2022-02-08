@@ -8,6 +8,7 @@ import { AuthService } from '../service/auth.service';
 import { PostService } from '../service/post.service';
 import { Topic } from '../model/Topic';
 import { TopicService } from '../service/topic.service';
+import { AlertsService } from '../service/alerts.service';
 
 @Component({
   selector: 'app-inicio',
@@ -36,6 +37,7 @@ export class InicioComponent implements OnInit {
     public authService : AuthService,
     public postService : PostService,
     public topicService : TopicService,
+    private alerts: AlertsService
 
 
   ) { }
@@ -99,7 +101,7 @@ export class InicioComponent implements OnInit {
 
     this.postService.postPost(this.post).subscribe((resp: Post) => {
       this.post = resp
-      alert('Postagem realizada com sucesso!')
+      this.alerts.showAlertSuccess('Postagem realizada com sucesso!')
       this.post = new Post()
       this.getAllPosts()
     })
@@ -120,11 +122,11 @@ export class InicioComponent implements OnInit {
       },
       error: erro => {
       if(erro.status == 500){
-        alert('Usuário ou senha estão incorretos')
+        this.alerts.showAlertDanger('Usuário ou senha estão incorretos')
         console.log(this.userLogin)
       }
       if(erro.status == 401){
-        alert('Usuário ou senha estão incorretos')
+        this.alerts.showAlertDanger('Usuário ou senha estão incorretos')
       }
     },
     });

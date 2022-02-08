@@ -1,47 +1,47 @@
 <div class="container-fluid bg">
-  <div class="row d-flex justify-content-center align-items-center">
+  <div class="row d-flex justify-content-center align-items-center  bg">
 <div class="col-md-6">
 <section class="vh-40">
     <div class="container py-2 h-80">
       <div class="row d-flex justify-content-left align-items-center h-80">
         <div class="col-12 col-md-12 col-lg-9 col-xl-9">
           <div class="card shadow-2-strong rounded">
-            <div class="card-body px-5 text-center py-1">
+            <div class="card-body px-5 text-center py-1  bg">
 
               <h3 class="mb-1 mt-4 text-white col-md-12 bg-info rounded-pill">Cadastro</h3>
 
               <div class="form-group" style='text-align:left'>
-                <label for="name">Nome:</label>
+                <label class="text-white" for="name">Nome:</label>
                 <input [(ngModel)]="user.name" type=""class="form-control" type="text" name="name" id="name"
                         placeholder="Seu Nome">
               </div>
 
               <div class="form-group" style='text-align:left'>
-                <label for="email">Usuário:</label>
+                <label class="text-white" for="email">Usuário:</label>
                 <input [(ngModel)]="user.email" class="form-control" type="email" name="email" id="email"
                 placeholder="Digite um E-mail Válido">
             </div>
 
             <div class="form-group" style='text-align:left'>
-              <label for="photo">Foto:</label>
+              <label class="text-white" for="photo">Foto:</label>
               <input [(ngModel)]="user.photo" type=""class="form-control" type="text" name="photo" id="photo"
                       placeholder="Cole aqui o Link da sua foto">
             </div>
 
             <div class="form-group" style='text-align:left'>
-                <label for="password">Senha:</label>
+                <label class="text-white" for="password">Senha:</label>
                 <input (input)="confirmSenha($event)" class="form-control" type="password" name="password" id="password"
                 placeholder="Sua senha">
             </div>
 
             <div class="form-group" style='text-align:left'>
-                <label for="confirmsenha">Confirmar Senha:</label>
+                <label class="text-white" for="confirmsenha">Confirmar Senha:</label>
                 <input [(ngModel)]="user.password" class="form-control" type="password" name="confirmsenha" id="confirmsenha"
                 placeholder="Confirme sua senha">
             </div>
 
             <div class="form-group" style='text-align:left'>
-                <label for="confirmsenha">Tipo de Usuário:</label>
+                <label class="text-white" for="confirmsenha">Tipo de Usuário:</label>
                 <select (change)="tipoUser($event)" class="form-control" name="tipo" id="tipo">
                     <option>Selecione um tipo de usuário:</option>
                     <option value="normal">Normal</option>

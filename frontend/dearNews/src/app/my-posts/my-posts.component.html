@@ -1,14 +1,32 @@
 <div class="container-fluid tamanho bg">
-  <div class="card-columns">
-    <div class="card text-center" *ngFor='let item of user.post' >
-      <div class="card-body">
-        <h5 class="card-title m-0">{{item.title}}</h5>
-        <p><img src="{{item.image}}" alt="Imagem da publicação" width="250" height="250"> </p>
-        <small class="text-muted">Tema: {{item.topic.name}}</small>
-        <p class="card-text mt-3">{{item.text}}</p>
-        <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+  <div class="row d-flex card-columns align-items-center justify-content-center">
+    <div class="col-12 row d-flex  align-items-center justify-content-center">
+    <h1 class="text-white align-items-center mt-5">Minhas Postagens !!</h1>
+  </div>
+    <div class="row col-md-8 card text-center bg border border-info d-flex align-items-center justify-content-center mb-5" *ngFor='let item of user.post' >
+
+      <div class="card-body text-center">
+       
+        <h5 class="card-title mb-3 text-white">{{item.title}}</h5>
+
+
+        <p><img src="{{item.image}}" alt="Imagem da publicação" class="col-8 img img-fluid"> </p>
+
+
+        <small class="text-light text-white">Tema: {{item.topic.name}}</small>
+
+
+        <div class="row col-12"> 
+          <div class="col-2"></div>
+          <div class="col-8"><p class="text-center text-justify col-7 mt-3 text-white ">{{item.text}}</p></div>
+          <div class="col-2"></div>
+        </div>
+       
+  
+        <p class="card-text text-white"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
 
         <a class="text-info mr-3" [routerLink]="['/edit-post', item.id]">Editar</a>
+
         <a class="text-danger" [routerLink]="['/delete-post', item.id]" >Apagar</a>
 
       </div>

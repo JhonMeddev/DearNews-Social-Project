@@ -3,6 +3,7 @@ import { PostService } from 'src/app/service/post.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Post } from 'src/app/model/Post';
+import { AlertsService } from 'src/app/service/alerts.service';
 
 @Component({
   selector: 'app-delete-post',
@@ -18,6 +19,7 @@ export class DeletePostComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private postService: PostService,
+    private alerts: AlertsService,
   ) { }
 
   ngOnInit(){
@@ -40,7 +42,7 @@ export class DeletePostComponent implements OnInit {
 
   delete(){
    this.postService.deletePost(this.idPost).subscribe(()=>{
-     alert('Postagem apagada com sucesso')
+    this.alerts.showAlertInfo('Postagem apagada com sucesso')
      this.router.navigate(['/inicio'])
    })
   }

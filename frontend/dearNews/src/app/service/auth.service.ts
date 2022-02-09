@@ -36,6 +36,11 @@ export class AuthService {
     return this.http.get<UserModel>(`https://dearnews.herokuapp.com/usuarios/${id}`, this.token)
   }
 
+  atualizar(user: UserModel): Observable<UserModel> {
+    return this.http.put<UserModel>('https://dearnews.herokuapp.com//usuarios/atualizar', user, this.token)
+  }
+
+
   logado(){
     let ok: boolean = false
 

@@ -50,7 +50,7 @@ export class EditUserComponent implements OnInit {
     if(this.user.password != this.confirmarSenha) {
       this.alerts.showAlertDanger("Senhas divergentes.");
     }else {
-      this.authService.cadastrar(this.user).subscribe((resp: UserModel)=>{
+      this.authService.atualizar(this.user).subscribe((resp: UserModel)=>{
         this.user = resp
         this.router.navigate(["/inicio"])
       });

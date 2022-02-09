@@ -1,36 +1,28 @@
-<div class="container-fluid tamanho bg">
-  <div class="row d-flex card-columns align-items-center justify-content-center">
-    <div class="col-12 row d-flex  align-items-center justify-content-center">
+<div class="container-fluid d-flex justify-content-center bg ">
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex  align-items-center justify-content-center">
     <h1 class="text-white align-items-center mt-5">Minhas Postagens !!</h1>
   </div>
-    <div class="row col-md-8 card text-center bg border border-info d-flex align-items-center justify-content-center mb-5" *ngFor='let item of user.post' >
+</div>
 
-      <div class="card-body text-center">
-       
-        <h5 class="card-title mb-3 text-white">{{item.title}}</h5>
-
-
-        <p><img src="{{item.image}}" alt="Imagem da publicação" class="col-8 img img-fluid"> </p>
-
-
-        <small class="text-light text-white">Tema: {{item.topic.name}}</small>
-
-
-        <div class="row col-12"> 
-          <div class="col-2"></div>
-          <div class="col-8"><p class="text-center text-justify col-7 mt-3 text-white ">{{item.text}}</p></div>
-          <div class="col-2"></div>
+    <div class="card col-md-6 p-0 mb-2 " *ngFor='let item of user.post | orderBy  : key : reverse'>
+      <div class="card-body bg ">
+        <h5 class="card-title m-0 text-white col-md-10">{{item.title}}</h5>
+        <p class="card-text col-md-10"><small class="text-white">Tema: {{item.topic.name}}</small></p>
+        <img class="img-fluid col-md-10 card-img img-contain img-post" src="{{item.image}}" alt="Imagem da publicação">
+        <p class="card-text mt-3 col-md-10 text-justify text-white">{{item.text}}</p>
+        <p class="card-text col-md-10"><small class="text-white">
+          {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
+          <div class="d-flex flex-row col-8">
+          <a [routerLink]="['/postagem-edit', item.id]" class="d-flex col-md-6 justify-content-center text-info mr-2" href="">Editar</a>
+          <a [routerLink]="['/postagem-delete', item.id]" class="d-flex col-md-6 justify-content-center text-danger" href="">Apagar</a>
         </div>
-       
-  
-        <p class="card-text text-white"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
-
-        <a class="text-info mr-3" [routerLink]="['/edit-post', item.id]">Editar</a>
-
-        <a class="text-danger" [routerLink]="['/delete-post', item.id]" >Apagar</a>
-
+        </div>
       </div>
+
+
     </div>
   </div>
-</div>
+
 

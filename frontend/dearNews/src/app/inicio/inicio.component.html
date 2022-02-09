@@ -1,4 +1,4 @@
-<div class="html">
+<div class="html d-flex">
 
   <div class="container body">
 
@@ -6,13 +6,13 @@
 
       <div class="row pt-5 pb-0 mb-0">
 
-        <div class="d-flex justify-content-center align-items-center px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5" *ngIf="!authService.logado()">
+        <div class="d-flex justify-content-center align-items-center px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5 mb-5" *ngIf="!authService.logado()">
 
         <div class="col-md-6">
 
-          <form class="mt-5 border border-white rounded">
+          <form class="mt-5 rounded">
 
-            <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center rounded-bottom text-info">Bem Vindo</h3>
+            <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center rounded">Dearnews</h3>
 
             <div class="form-outline mb-4 ml-3 mr-3 pt-3">
               <input [(ngModel)]="userLogin.email" type="email" id="email" name="email" class="form-control form-control-lg border border-info" />
@@ -27,7 +27,7 @@
             <div class="mb-4 ml-3 text-center">
               <button class="btn btn-info btn-lg border border-info" type="submit" (click)="entrar()">Entrar</button>
             </div>
-            <p class="ml-5 ">Não tem conta ? <a routerLink = '/register' class="link-info">Cadastre-se aqui.</a></p>
+            <p class="ml-5 border-bottom border-white">Não tem conta ? <a routerLink = '/register' class="link-info">Cadastre-se aqui.</a></p>
 
           </form>
 
@@ -35,8 +35,8 @@
 
 
 
-          <div class="col-md-6">
-            <img class="img-fluid" src="https://imgur.com/GDnaaK5.png" alt="Bem Vindo">
+          <div class="container-fluid col-md-6 img-inicio">
+            <img class="img-fluid" src="https://imgur.com/ccLFWzZ.png" alt="Bem Vindo">
           </div>
 
 
@@ -59,7 +59,7 @@
 
               <div class="row d-flex justify-content-center mt-2 mb-4">
                   <div class="col-md-6">
-                      <button class="btn btn-outline-info mr-2" data-toggle="modal" data-target="#staticBackdrop" *ngIf="authService.logado()">Nova Postagem</button>
+                      <button class="btn btn-outline-info mr-2" data-toggle="modal" data-target="#staticBackdrop">Nova Postagem</button>
                       <a class="btn btn-outline-info ml-2 mt-2" href="#postagens">Ver Postagens</a>
                   </div>
               </div>
@@ -75,12 +75,12 @@
 
 
 
-    <div class="container" id="postagens">
+    <div class="container mt-5 justify-content-center" id="postagens">
 
       <nav>
         <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
-          <a class="nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">FEED </a>
+          <a class="nav-link active text-secondary font-weight-bold " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">FEED </a>
 
         </div>
 
@@ -99,32 +99,38 @@
 
           <div class="card mt-3 bg-user1" *ngFor='let item of listPost'>
 
-            <div class="row ml-3 mb-0 mt-0">
+            <div class="row ml-0 mb-0 mt-0">
 
-              <div class="col-md-2 p-0 h-25 rounded bg-user">
+              <div class="col-md-2 p-0 h-25 ml-0 rounded bg-user">
 
-                <div class="row">
+                <div class="row img-profile-post">
                   <img src="{{item.userModel.photo}}" alt="perfil" class="img-fluid img-profile float-left rounded mt-2 border border-white w-50 h-50">
                 </div>
 
 
                 <div class="row mt-2 justify-content-start">
-                  <p class="card-text text-uppercase user-name">{{item.userModel.name}}</p>
+                  <p class="card-text text-uppercase user-name border-bottom">{{item.userModel.name}} :</p>
                 </div>
 
               </div>
 
-              <div class="col-md-9 mb-2 ml-0 p-0 mt-2 border ">
+              <div class="border-info border-bottom col-md-9 mr-0 mb-2 ml-0 p-0 mt-2">
 
-                <h5 class="card-title text-left text-uppercase mt-2 mb-0 f-title">{{item.title}}</h5>
+                <h5 class="card-title text-left text-uppercase mt-2 mb-0 f-title text-info">{{item.title}}</h5>
 
                 <p class="text-left mt-0 f-tema"><small>Tema: {{item.topic.name}}</small></p>
 
-                <img class="img-contain img-post" src="{{item.image}}" alt="Imagem da publicação">
 
-                <p class="card-text text-justify f-text">{{item.text}}</p>
 
-                <p class="card-text"><small class="text-white">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+
+                  <img class="col-md-12 img-fluid" src="{{item.image}}" alt="Imagem da publicação">
+
+                  <p class="col-md-12 card-text text-justify">{{item.text}}</p>
+
+
+
+
+                <p class="card-text"><small>{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
               </div>
 
 
@@ -139,40 +145,40 @@
 
     <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content text-info bg-dark">
+      <div class="modal-dialog modal-dialog-centered text-center container-fluid d-flex">
+          <div class="modal-content text-info modal-post border">
               <div class="modal-header">
-                  <h4 class="modal-title" id="staticBackdropLabel">Faça sua postagem...</h4>
+                  <h4 class="modal-title text-primary" id="staticBackdropLabel">COMPARTILHE UMA DEARNEWS</h4>
               </div>
               <div class="modal-body">
 
                   <div class="form-group">
-                      <label for="titulo">Título</label>
-                      <input [(ngModel)]="post.title" type="text" class="form-control" id="titulo" placeholder="Digite o título da postagem...">
+                      <label for="titulo">TÍTULO</label>
+                      <input [(ngModel)]="post.title" type="text" class="form-control" id="titulo">
                   </div>
 
                   <div class="form-group">
-                      <label for="titulo">Texto</label>
-                      <textarea [(ngModel)]='post.text' class="form-control" name="texto" id="texto" rows="8"></textarea>
+                      <label for="titulo">TEXTO</label>
+                      <textarea [(ngModel)]='post.text' class="form-control" name="texto" id="texto" rows="8" placeholder="Qual a Melhor noticia que você viu hoje ?"></textarea>
                   </div>
 
                   <div>
-                    <label for="">Adicione uma Imagem* : <input type="text" [(ngModel)]='post.image'></label>
+                    <label for="">ADICIONE UM LINK DA IMAGEM :</label>
+                    <textarea [(ngModel)]='post.image' class="form-control" name="link" id="link" rows="2" placeholder="Link imagem da publicação .PNG OU .JPEG"></textarea>
+
                   </div>
 
                   <div class="form-group">
-                    <label for="tema">Selecione a categoria <a data-dismiss="modal"  [routerLink]="['/topic',idTopic]">(cadastrar categoria...)</a></label>
+                    <label for="tema">Selecione uma categoria ou <a data-dismiss="modal"  [routerLink]="['/topic',idTopic]">Cadastre uma nova</a></label>
                     <select class="form-control" name="tema" id="tema" [(ngModel)]="idTopic" (change)='findByIdTopic()'>
                       <option *ngFor='let item of listTopic' value="{{item.id}}">{{item.name}}</option>
                     </select>
                 </div>
 
-
-
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn1" data-dismiss="modal">Voltar</button>
-                  <button type="button" class="btn btn2" (click)='publicar()' data-dismiss="modal">Postar</button>
+                  <button type="button" class="btn btn-dark" data-dismiss="modal">Voltar</button>
+                  <button type="button" class="btn btn-info" (click)='publicar()' data-dismiss="modal">Postar</button>
               </div>
           </div>
       </div>

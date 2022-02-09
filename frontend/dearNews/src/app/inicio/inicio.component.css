@@ -43,21 +43,35 @@
 }
 
 .bg-user1{
-  background: rgb(2, 17, 39);
+  background: rgb(1, 9, 20);
 
 }
 
 .bg-user{
-  background: rgb(2, 17, 39);
+  background: rgb(1, 9, 20);
 
 }
 
-.modal{
-  color: rgb(2, 17, 39);
+.modal-post{
+
+  font-family: 'PT Sans Narrow', sans-serif;
+
+  background-color: rgb(2, 17, 39);
+  opacity: 0.9;
+
 }
 
 .img-post{
-  max-width:50%;
+  max-width:100%;
   height: auto;
 
 }
+@media (max-width: 900px){
+  .img-inicio{
+    display: none;
+  }
+  .img-profile-post{
+    display: none;
+  }
+}
+

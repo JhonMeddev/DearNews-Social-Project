@@ -32,8 +32,14 @@ export class DeletePostComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
 
-    if(environment.token == ''){
-      this.router.navigate(['/entrar'])
+    this.authService.refreshToken()
+
+    this.idUser = this.route.snapshot.params['id']
+    this.findByIdUser()
+
+    if (environment.token == ''){
+      this.alerts.showAlertDanger('Sua sessão expirou, faça o login novamente.')
+      this.router.navigate(['/login'])
     }
 
     this.idPost = this.route.snapshot.params['id']

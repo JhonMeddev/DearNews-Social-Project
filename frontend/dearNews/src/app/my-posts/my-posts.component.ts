@@ -18,7 +18,8 @@ export class MyPostsComponent implements OnInit {
 
   user: UserModel = new UserModel();
   idUser: number
-
+  key: 'data'
+  reverse: true
   constructor(
     public authService : AuthService,
     private route: ActivatedRoute,

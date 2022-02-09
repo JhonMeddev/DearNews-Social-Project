@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/model/Post';
 import { Topic } from 'src/app/model/Topic';
+import { UserModel } from 'src/app/model/UserModel';
 import { AlertsService } from 'src/app/service/alerts.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { PostService } from 'src/app/service/post.service';
 import { TopicService } from 'src/app/service/topic.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-edit-post',
@@ -19,18 +22,32 @@ export class EditPostComponent implements OnInit {
   listaTopic: Topic[];
   idTopic: number;
 
+  id = environment.id;
+  user: UserModel = new UserModel();
+  idUser = environment.id
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    public authService: AuthService,
     private postService: PostService,
     private topicService: TopicService,
     private alerts: AlertsService
   ) { }
 
   ngOnInit() {
+
+    window.scroll (0,0)
+      
+    if(environment.token == ''){
+      this.router.navigate(['/login'])
+      this.alerts.showAlertDanger('Seu Token Expirou Faça Login Novamente')
+      }
+
     let id = this.route.snapshot.params["id"];
     this.findByIdPost(id);
     this.findAllTopics();
+    this.findByIdUser();
   }
 
   findByIdPost(id: number) {
@@ -44,6 +61,12 @@ export class EditPostComponent implements OnInit {
 
   findAllTopics() {
     this.topicService.getAllTopic().subscribe((resp: Topic[])=>{this.listaTopic = resp});
+  }
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: UserModel) => {
+      this.user = resp
+    })
   }
 
   atualizar() {

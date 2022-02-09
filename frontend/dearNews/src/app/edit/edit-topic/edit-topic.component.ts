@@ -22,13 +22,19 @@ export class EditTopicComponent implements OnInit {
     private alerts: AlertsService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    window.scroll (0,0)
+
+    if(this.idTopic === undefined){
+      this.router.navigate(['/inicio'])
+      this.alerts.showAlertDanger('Selecione um Tópico para editar')
+    }
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
 
-    let id = this.route.snapshot.params['id']
-    this.findByIdTopic(id)
+    this.idTopic = this.route.snapshot.params['id']
+    this.findByIdTopic(this.idTopic)
   }
 
   findByIdTopic(id: number){

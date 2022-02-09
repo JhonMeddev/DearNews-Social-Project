@@ -56,7 +56,7 @@ export class TopicComponent implements OnInit {
   register(){
     this.topicService.postTopic(this.topic).subscribe((resp: Topic)=>{
       this.topic = resp
-      alert('Tema cadastrado com sucesso!')
+      this.alerts.showAlertInfo('Tema cadastrado com sucesso!')
       this.findAllTopic()
       this.topic = new Topic()
     })

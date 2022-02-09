@@ -95,16 +95,29 @@ export class InicioComponent implements OnInit {
   publicar(){
     this.topic.id = this.idTopic
     this.post.topic = this.topic
-
     this.user.id = this.idUser
     this.post.userModel = this.user
 
-    this.postService.postPost(this.post).subscribe((resp: Post) => {
+    this.postService.postPost(this.post).subscribe({ next: (resp: Post) => {
       this.post = resp
       this.alerts.showAlertSuccess('Postagem realizada com sucesso!')
       this.post = new Post()
       this.getAllPosts()
-    })
+    },
+
+    error: erro => {
+      if(erro.status == 500){
+        this.alerts.showAlertDanger('Há algo de errado com sua postagem, porfavor revise')
+        console.log(this.userLogin)
+      }
+      if(erro.status == 400){
+        this.alerts.showAlertDanger('Há algo de errado com sua postagem, porfavor revise')
+        console.log(this.userLogin)
+      }
+      if(erro.status == 401){
+        this.alerts.showAlertDanger('Postagem não autorizada')
+      }},})
+
   }
 
   entrar(){

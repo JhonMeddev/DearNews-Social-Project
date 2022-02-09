@@ -41,7 +41,7 @@
 
 }
 
-img{
+.img-group{
   max-width:50%;
   height: auto;
 
@@ -66,5 +66,111 @@ img{
   transform: scale(1.1);
   transition: 1s;
   opacity: 1;
-  background: white;
+}
+
+
+
+
+.inner-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 0.1rem;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+border-radius: 0.1rem;
+}
+
+.card-front{
+
+background-position: center;
+background-size: cover;
+} 
+
+
+.pequipe{
+  display: inline-block;
+  color: #5e3519;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #5e3519;
+  margin-top: 140px;
+  font-family: 'Arimo', sans-serif;
+  font-size: 14.68pt; 
+}
+
+.titulomvv{
+  font-family: 'Passion One', cursive;
+  font-size: 28pt;
+}
+
+.spanmvv {
+  display: inline-block;
+  width: 200px;  
+ padding: 14px 0;
+ margin-top: 160px;
+ border-radius: 4px;   
+ color: #000000;
+ transition: transform 1s;
+} 
+
+.backmissao{
+  background: #E8EAE7;
+  transform: rotateX(180deg);
+}
+
+.backvisao{
+  background: #FAE8D6;
+  transform: rotateX(180deg);
+}
+
+.cardmvv{
+  max-width: 400px;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  perspective: 1100px;
+  cursor: default #000000;    
+}
+
+.cardmvv:hover .inner-box {
+  transform: rotateX(-180deg);
+}
+
+.cardmvv:hover span{
+  transform: translateY(140px)
+}
+
+.cardmissao{
+  background-image: url(https://i.imgur.com/T4v2vfh.png);
+}
+
+.cardvisao{
+  background-image: url(https://i.imgur.com/0UHN7S4.png);
+  
+}
+
+.pmvv{
+  display: inline-block;    
+  color: #000000;
+  padding-bottom: 10px;    
+  margin-top: auto;
+  text-justify: center;
+
+}
+
+.pbordermvv{
+  border-bottom: 1px solid #000000;
+  display: inline-block;    
+  color: #000000;
+  padding-bottom: 10px;    
+  margin-top: auto;
+  text-justify: center;
 }

@@ -15,8 +15,8 @@
         <p class="card-text col-md-10"><small class="text-white">
           {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
           <div class="d-flex flex-row col-8">
-          <a [routerLink]="['/postagem-edit', item.id]" class="d-flex col-md-6 justify-content-center text-info mr-2" href="">Editar</a>
-          <a [routerLink]="['/postagem-delete', item.id]" class="d-flex col-md-6 justify-content-center text-danger" href="">Apagar</a>
+          <a [routerLink]="['/edit-post', item.id]" class="d-flex col-md-6 justify-content-center text-info mr-2" href="">Editar</a>
+          <a [routerLink]="['/delete-post', item.id]" class="d-flex col-md-6 justify-content-center text-danger" href="">Apagar</a>
         </div>
         </div>
       </div>

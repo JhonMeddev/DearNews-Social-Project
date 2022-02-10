@@ -4,30 +4,30 @@
 
     <div class="container tamanho">
 
-      <div class="row pt-5 pb-0 mb-0 loginResponsive">
+      <div class="row loginResponsive">
 
-        <div class="d-flex justify-content-center align-items-center px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5 mb-5" *ngIf="!authService.logado()">
+        <div class="d-flex justify-content-center align-items-center" *ngIf="!authService.logado()">
 
         <div class="col-md-6">
 
           <form class="mt-5 rounded">
 
-            <h3 class="fw-normal ml-5 mr-5 mb-3 mt-3 text-center rounded">Dearnews</h3>
+            <h3 class="text-center">Dearnews</h3>
 
-            <div class="form-outline mb-4 ml-3 mr-3 pt-3">
+            <div class="form-outline mb-0 ml-3 mr-3 pt-3">
               <input [(ngModel)]="userLogin.email" type="email" id="email" name="email" class="form-control form-control-lg border border-info" />
               <label class="form-label" for="form2Example18">Email</label>
             </div>
 
-            <div class="form-outline mb-4 ml-3 mr-3">
+            <div class="form-outline mb-0 ml-3 mr-3">
               <input [(ngModel)]="userLogin.password" type="password" name="password" id="password" class="form-control form-control-lg border border-info" />
               <label class="form-label" for="form2Example28">Senha</label>
             </div>
 
-            <div class="mb-4 ml-3 text-center">
+            <div class="mb-1 ml-3 text-center">
               <button class="btn btn-info btn-lg border border-info" type="submit" (click)="entrar()">Entrar</button>
             </div>
-            <p class="ml-5 border-bottom border-white">Não tem conta ? <a routerLink = '/register' class="link-info">Cadastre-se aqui.</a></p>
+            <p class="border border-top-0 text-center"><button class="mt-0 ml-3 mb-2 btn btn-secondary btn-lg"><a class="text-white" routerLink = '/register'>Cadastre-se</a></button></p>
 
           </form>
 

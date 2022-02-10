@@ -67,6 +67,9 @@
 
 }
 @media (max-width: 900px){
+  .img-inicio{
+    display: none;
+  }
   .img-profile-post{
     display: none;
   }

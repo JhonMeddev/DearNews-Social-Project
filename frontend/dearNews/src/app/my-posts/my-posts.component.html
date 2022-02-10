@@ -1,22 +1,22 @@
 <div class="container-fluid d-flex justify-content-center bg ">
 <div class="container">
   <div class="row">
-    <div class="col-12 d-flex  align-items-center justify-content-center">
-    <h1 class="text-white align-items-center mt-5">Minhas Postagens !!</h1>
+    <div class="col-md-12 d-flex justify-content-center mt-5">
+    <h1 class="text-white align-items-center">Minhas Postagens</h1>
   </div>
 </div>
 
-    <div class="card col-md-6 p-0 mb-2 " *ngFor='let item of user.post | orderBy  : key : reverse'>
-      <div class="card-body bg ">
-        <h5 class="card-title m-0 text-white col-md-10">{{item.title}}</h5>
-        <p class="card-text col-md-10"><small class="text-white">Tema: {{item.topic.name}}</small></p>
-        <img class="img-fluid col-md-10 card-img img-contain img-post" src="{{item.image}}" alt="Imagem da publicação">
-        <p class="card-text mt-3 col-md-10 text-justify text-white">{{item.text}}</p>
-        <p class="card-text col-md-10"><small class="text-white">
+    <div class="card-group border col-md-12 p-0" *ngFor='let item of user.post | orderBy  : key : reverse'>
+      <div class="card-body bg col-md-6">
+        <h5 class="card-title m-0 text-white">{{item.title}}</h5>
+        <p class="card-text"><small class="text-white">Tema: {{item.topic.name}}</small></p>
+        <img class="img-fluid card-img img-contain img-post" src="{{item.image}}" alt="Imagem da publicação">
+        <p class="card-text mt-3 text-justify text-white">{{item.text}}</p>
+        <p class="card-text text-center"><small class="text-white">
           {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
-          <div class="d-flex flex-row col-8">
-          <a [routerLink]="['/edit-post', item.id]" class="d-flex col-md-6 justify-content-center text-info mr-2" href="">Editar</a>
-          <a [routerLink]="['/delete-post', item.id]" class="d-flex col-md-6 justify-content-center text-danger" href="">Apagar</a>
+          <div class="d-flex flex-row align-items-center">
+          <a [routerLink]="['/edit-post', item.id]" class="d-flex justify-content-center text-info ml-5 mr-5">Editar</a>
+          <a [routerLink]="['/delete-post', item.id]" class="d-flex justify-content-center text-danger">Apagar</a>
         </div>
         </div>
       </div>

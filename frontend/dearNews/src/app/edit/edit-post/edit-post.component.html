@@ -1,24 +1,24 @@
-<div class="container-fluid corfundo">
+<div class="container-fluid tamanho corFundo">
 
     <div class="row">
         <div class="col-md-12">
 
-            <h1 class="text-white text-center mt-3">Atualizar Postagem</h1>
+            <h1 class="text-center mb-5 mt-4">Atualizar Postagem</h1>
 
         </div>
     </div>
 
-    <div class="row d-flex justify-content-center ">
+    <div class="row d-flex justify-content-center">
         <div class="col-md-6">
 
             <div class="form-group">
-                <label class="text-white" for="titulo">Título</label>
+                <label for="titulo">Título</label>
                 <input [(ngModel)]="post.title" type="text" class="form-control" id="titulo"
                     placeholder="Digite o título da postagem...">
             </div>
 
             <div class="form-group">
-                <label class="text-white" for="tema">Selecione a categoria</label>
+                <label for="tema">Selecione a categoria</label>
                 <select class="form-control" name="tema" id="tema" [(ngModel)]="idTopic" (change)="findByIdTema()">
                     <option *ngFor="let item of listaTopic" value="{{item.id}}">
                         {{item.description}}
@@ -27,13 +27,13 @@
             </div>
 
             <div class="form-group">
-                <label class="text-white" for="titulo">Texto</label>
+                <label for="titulo">Texto</label>
                 <textarea [(ngModel)]="post.text" class="form-control" name="texto" id="texto" rows="8"></textarea>
             </div>
 
             <div class="d-flex justify-content-center mb-3">
-                <button class="btn btn-danger mr-1 ml-1" [routerLink]="['/my-posts', idUser]">Cancelar</button>
-                <button class="btn btn-success mr-1 ml-1" (click)="atualizar()">Atualizar</button>
+                <button class="btn btn-outline-danger mr-4" [routerLink]="['/my-posts', idUser]">Cancelar</button>
+                <button class="btn btn-outline-info" (click)="atualizar()">Atualizar</button>
             </div>
 
         </div>

@@ -29,7 +29,7 @@ export class EditUserComponent implements OnInit {
     this.authService.refreshToken()
 
     if (environment.token == "") {
-      this.router.navigate(["/logar"])
+      this.router.navigate(["/login"])
     }
     this.idUser = this.route.snapshot.params["id"];
     this.findByIdUser(this.idUser);

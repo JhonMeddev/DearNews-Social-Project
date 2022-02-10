@@ -2,13 +2,7 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center text-light">Apagar Postagem !</h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <h4 class="text-center text-light">Você tem certeza que deseja apagar essa postagem ?</h4>
+            <h1 class="text-center text-danger">Você tem certeza que deseja apagar essa postagem ?</h1>
         </div>
     </div>
 
@@ -18,7 +12,7 @@
             <div class="card-body corFundo h-25 col-lg-12">
               <h5 class="card-title m-0">{{post.title}}</h5>
               <small class="text-muted">Tema: {{post.topic.description}}</small>
-              <img class="img-fluid col-md-10 card-img img-contain img-post h-30" src="{{post.image}}" alt="Imagem da publicação">
+              <img class="row img-fluid card-img img-contain img-post h-30" src="{{post.image}}" alt="Imagem da publicação">
               <p class="card-text mt-3">{{post.text}}</p>
               <p class="card-text"><small class="text-muted">{{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:
                   'HH:mm'}}</small></p>
@@ -29,8 +23,8 @@
 
     <div class="row mt-3 mb-5">
         <div class="col-md-12 d-flex justify-content-center mt-3 mb-5">
-            <button class="btn btn-danger mr-4" [routerLink]="['/my-posts', idUser]">Não</button>
-            <button class="btn btn-primary" (click)="delete()">Sim</button>
+            <button class="btn btn-outline-danger mr-4" [routerLink]="['/my-posts', idUser]">Não</button>
+            <button class="btn btn-outline-info" (click)="delete()">Sim</button>
         </div>
     </div>
 </div>

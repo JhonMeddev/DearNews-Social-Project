@@ -11,7 +11,7 @@
       <h1 class="fs-54 text-center">Tópicos</h1>
       <h5 class="fs-18 text-center">Veja aqui todos os tópicos cadastrados ou cadastre um novo:</h5>
 
-      <div class="row d-flex justify-content-center mt-4 mb-5">
+      <div class="row d-flex justify-content-center mt-4">
         <div class="col-md-3">
           <div class="form-group">
             <input [(ngModel)]='topic.name' type="text" class="form-control" id="name" placeholder="Digite o nome do tópico">
@@ -44,22 +44,38 @@
   
 </div>
 
-<div class="container">
+<div class="container-fluid">
 
   <div class="row d-flex justify-content-center mt-4">
     <div class="col-md-8 px-2 py-5">
-      <h2 class="text-center text-white mb-5">Todos os Tópicos</h2>
+      <h2 class="text-center text-light">Todos os temas</h2>
+    </div>
+  </div>
 
-          <select name="topic" id="topic" class="form-control" [(ngModel)]='idTopic' (change)='findByIdTopic()'>
+  <div class="row mt-3  d-flex justify-content-center">
+    <div class="col-md-6">
 
-            <option *ngFor='let item of listTopic' value="{{item.id}}">{{item.name}}</option>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="text-light">#</th>
+            <th scope="col" class="text-light">Descrição</th>
+            <th scope="col" class="text-light">Modificações</th>
 
-          </select>
+          </tr>
+        </thead>
 
-          <td class="d-flex justify-content-center mt-3">
-            <button class="btn apagar mr-3" [routerLink]="['/delete-topic', topic.id]">Apagar</button>
-            <button class="btn cadastrar" [routerLink]="['/edit-topic', topic.id]">Editar</button>
-          </td>
+        <tbody>
+          <tr *ngFor='let item of listTopic'>
+            <th class="text-white">{{item.id}}</th>
+            <td class="text-white">{{item.name}}</td>
+            <td class="d-flex justify-content-end">
+              <button class="btn btn-info mr-3" [routerLink]="['/edit-topic', item.id]" >Editar</button>
+              <button class="btn btn-danger" [routerLink]="['/delete-topic', item.id]" >Apagar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
         </div>
 

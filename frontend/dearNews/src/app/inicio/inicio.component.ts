@@ -30,7 +30,8 @@ export class InicioComponent implements OnInit {
 
   userLogin: UsuarioLogin = new UsuarioLogin()
 
-
+  key = 'data'
+  reverse = true
 
   constructor(
     public router: Router,

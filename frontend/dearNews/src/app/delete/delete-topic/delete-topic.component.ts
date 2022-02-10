@@ -25,20 +25,16 @@ export class DeleteTopicComponent implements OnInit {
 
   ngOnInit() {
     window.scroll (0,0)
-
-    if(this.idTopic === undefined){
-      this.router.navigate(['/inicio'])
-      this.alerts.showAlertDanger('Selecione um Tópico para apagar')
-    }
+    
+    this.idTopic = this.route.snapshot.params['id']
+    this.findByIdTopic(this.idTopic)
+  
    
     if(environment.token == ''){
       this.router.navigate(['/login'])
       this.alerts.showAlertDanger('Seu Token Expirou Faça Login Novamente')
       }
 
-      this.idTopic = this.route.snapshot.params['id']
-      this.findByIdTopic(this.idTopic)
-    
     }
 
     findByIdTopic(id: number){

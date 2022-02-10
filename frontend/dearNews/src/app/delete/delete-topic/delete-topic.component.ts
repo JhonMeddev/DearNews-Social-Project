@@ -46,7 +46,7 @@ export class DeleteTopicComponent implements OnInit {
     delete(){
       this.topicService.deleteTopic(this.idTopic).subscribe(()=>{
         this.alerts.showAlertInfo('Tópico apagado com sucesso!')
-        this.router.navigate(['/topic'])
+        this.router.navigate(['/topic',this.idTopic])
       })
     }
   

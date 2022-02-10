@@ -6,20 +6,24 @@
   </div>
 </div>
 
-    <div class="card-group border col-md-12 p-0" *ngFor='let item of user.post | orderBy  : key : reverse'>
-      <div class="card-body bg col-md-6">
+    
+<div class="col-md-12 card-group">
+  <div class="card-group col-md-6 p-0" *ngFor='let item of user.post | orderBy  : key : reverse'>
+      <div class="card-body bg col-md-12">
         <h5 class="card-title m-0 text-white">{{item.title}}</h5>
         <p class="card-text"><small class="text-white">Tema: {{item.topic.name}}</small></p>
         <img class="img-fluid card-img img-contain img-post" src="{{item.image}}" alt="Imagem da publicação">
         <p class="card-text mt-3 text-justify text-white">{{item.text}}</p>
         <p class="card-text text-center"><small class="text-white">
           {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date:'HH:mm'}}</small></p>
-          <div class="d-flex flex-row align-items-center">
-          <a [routerLink]="['/edit-post', item.id]" class="d-flex justify-content-center text-info ml-5 mr-5">Editar</a>
+          <div class="d-flex row justify-content-center">
+          <a [routerLink]="['/edit-post', item.id]" class="d-flex justify-content-center text-info mr-5">Editar</a>
           <a [routerLink]="['/delete-post', item.id]" class="d-flex justify-content-center text-danger">Apagar</a>
         </div>
         </div>
       </div>
+
+    </div>
 
 
     </div>

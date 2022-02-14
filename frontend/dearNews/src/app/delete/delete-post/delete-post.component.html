@@ -1,18 +1,18 @@
-<div class="container-fluid d-flex justify-content-center tamanho corFundo">
+<div class="container-fluid d-flex justify-content-center corFundo">
     <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center text-danger">Você tem certeza que deseja apagar essa postagem ?</h1>
+        <div class="col-md-12 mt-4 mb-1">
+            <h2 class="text-center text-danger">Você tem certeza que deseja apagar essa postagem ?</h2>
         </div>
     </div>
 
-    <div class="row d-flex justify-content-center mt-4 h-35">
-        <div class="col-md-12 h-25">
-            <div class="card text-center col-12 h-25 corFundo">
-            <div class="card-body corFundo h-25 col-lg-12">
-              <h5 class="card-title m-0">{{post.title}}</h5>
-              <small class="text-muted">Tema: {{post.topic.description}}</small>
-              <img class="row img-fluid card-img img-contain img-post h-30" src="{{post.image}}" alt="Imagem da publicação">
+    <div class="row d-flex justify-content-center mt-2">
+        <div class="col-md-12">
+            <div class="card text-center col-12 corFundo">
+            <div class="card-body corFundo col-lg-12">
+              <h4 class="card-title m-0">{{post.title}}</h4>
+              <small class="row justify-content-center text-white">Tema: {{post.topic.description}}</small>
+              <img class="row img img-fluid col-md-8 d-inline " src="{{post.image}}" alt="Imagem da publicação">
               <p class="card-text mt-3">{{post.text}}</p>
               <p class="card-text"><small class="text-muted">{{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date:
                   'HH:mm'}}</small></p>
@@ -23,7 +23,7 @@
 
     <div class="row mt-3 mb-5">
         <div class="col-md-12 d-flex justify-content-center mt-3 mb-5">
-            <button class="btn btn-outline-danger mr-4" [routerLink]="['/my-posts', idUser]">Não</button>
+            <button class="btn btn-outline-danger mr-4" [routerLink]="['/my-posts', id]">Não</button>
             <button class="btn btn-outline-info" (click)="delete()">Sim</button>
         </div>
     </div>

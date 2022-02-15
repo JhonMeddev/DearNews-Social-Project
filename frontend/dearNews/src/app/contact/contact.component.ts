@@ -13,4 +13,8 @@ export class ContactComponent implements OnInit {
     window.scroll(0,0)
   }
 
+  enviar(){
+    alert('Mensagem enviada com sucesso !')
+  }
+
 }
